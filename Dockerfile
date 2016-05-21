@@ -19,7 +19,14 @@ ENV RAILS_ENV production
 WORKDIR /tmp
 COPY ./Gemfile Gemfile
 COPY ./Gemfile.lock Gemfile.lock
+
+# Bundle
+RUN gem update --system
+RUN gem sources -r https://rubygems.org/ -a https://gems.ruby-china.org/
+RUN gem install bundler
+RUN bundle config mirror.https://rubygems.org https://gems.ruby-china.org
 RUN bundle install
+RUN gem source
 
 #启动nginx
 RUN rm -f /etc/service/nginx/down
