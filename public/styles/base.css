@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-03-27 09:47:20
+ * @version $Id$
+ */
+
+/* 页面基础 */
+body { width: 1366px; margin: 0 auto; background: #fff; }
+
+/* 回到顶部 */
+#backtop { display: none; width: 56px; height: 56px; background: rgb(250,93,0); border-radius: 56px; cursor: pointer; opacity: 0.5;position: fixed;right: 40px;bottom: 40px;z-index: 25; font-size: 20px; line-height: 56px; text-align: center; color: #fff; }
+	#backtop:hover { opacity: 1; }
+
+/* 导航 */
+#nav { background: rgb(255,255,255); border-bottom: solid 1px #e7e7e7; border-radius: 4px; }
+	#nav .wrap_pines { padding: 15px 0; }
+	#logo { width: 136px; height: 54px; }
+		#logo img { width: 136px; height: 54px; }
+	#menu { margin-left: 80px; margin-top: 10px; }
+	#menu li { float: left; margin-right: 40px; }
+	#menu li a { display: block; text-align: center; color: #131313; font-family: 'Open Sans'; font-weight:600; font-size: 16px; border-radius: 20px; padding: 10px 20px; transition: all 0.4s ease 0s; }
+	#menu li a:hover, #menu li a.selected { background: #f8504b; color: #fff; }
+
+/* 链接 */
+#link { background: rgb(30,31,36); padding: 30px 0; }
+	#link ul { margin: 0; }
+	#link .item { height: 235px; width: 275px;  }
+	#link h1 { font-size: 24px; color: #fff; }
+	#link .line { width: 40px; margin: 10px 0 30px; }
+	#link li { margin-bottom: 15px; }
+	#link li a { color: #fff; font-family: 'Open Sans'; font-weight:400;   font-size: 14px;   line-height: 20px;   margin: 0 0 10px;   overflow: hidden; padding: 0px 0 0px; transition: all 0.4s ease 0s; word-wrap:break-word; }
+	#link li a:hover { color: #f8504b; }
+
+/* 版权 */
+#copyright { background: rgb(30,31,36); border-top: solid 1px rgb(255,255,255); }
+	#copyright { color: #f2f2f2; font-family: 'Open Sans';font-weight:400; line-height: 20px; font-size: 14px; text-align:center; }
+	#copyright a { color: #f8504b }
+
+/* 常用样式 */
+.wrap_pines { margin: auto; width: 1110px; padding: 20px 0; }
+.float_left { float: left; }
+.float_right { float: right; }
+.title { text-align: center; }
+div, p, a { overflow: hidden; text-overflow: ellipsis; }
+span { color: #f8504b; margin: 0 6px; }
+.line {  margin:10px 0 30px; background: #f8504b; height: 5px; }
+body, button, input, select, textarea { font: 'Open Sans', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; }
+
+.wrap_pines>.name { color: #ffffff; font-family: 'Open Sans';font-weight:400; font-size: 30px; font-weight: normal; line-height: 40px; text-align: center;  }
+.wrap_pines>.words { color: #dedede; font-family: 'Open Sans';font-weight:400; font-size: 20px; line-height: 25px; margin-top: 10px; text-align: center; }
+.wrap_pines>.line { color: #f8504b; height: 3px; }
+.blank { width: 30px; float: left; height: 1px; }
+
+

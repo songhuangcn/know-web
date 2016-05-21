@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-05-12 16:25:22
+ * @version $Id$
+ */
+
+#downloads_tip { height: 300px; background: #fff; text-align: center; }
+	#downloads_tip h1 { color: #204056; font-size: 40px; line-height: 46px; font-family: 'Oxygen', sans-serif; font-weight: 300; margin: 67px auto 20px; }
+	#downloads_tip p { color: #3e3e40; font-weight: 500; font-size: 14px; line-height: 20px }
+
+#downloads_content { background: rgb(233, 234, 234); }
+	#downloads_content .decorate { width: 0; height: 0; border-style: solid; border-width: 30px; border-color:  #fff rgb(233, 234, 234) rgb(233, 234, 234) rgb(233, 234, 234); margin: 0 auto }
+	#downloads_content .category { width: 300px; margin: 20px auto 80px; }
+	#downloads_content .category select { background: #fff; border-radius: 0; border-width: 1px; border-style: solid; width: 300px; height: 40px; font-size: 14px; font-family: 'Oxygen', sans-serif; font-weight: 300; color: #3e3e40; border-color: rgb(166, 166, 166); cursor: pointer; }
+
+	#downloads_content .content li { height: 200px; background: #fff; margin-bottom: 30px; }
+		#downloads_content .content li .left { cursor: pointer; text-align: center; vertical-align: middle; width: 200px; height: 200px; float: left; transition: all 0.2s ease 0s;}
+		#downloads_content .content li .right { width: 870px; height: 180px; padding: 10px 20px; float: right; transition: all 0.3s ease 0s; cursor: default; }
+		#downloads_content .content li .right h1 { color: #204056; font-size: 32px; height: 60px; line-height: 60px; font-family: 'Oxygen', sans-serif; }
+		#downloads_content .content li .right p { color: #3e3e40; font-size: 14px; height: 60px; line-height: 20px; font-weight: 10px; }
+		#downloads_content .content li .right .download-icon { cursor: pointer; display: block; width: 50px; height: 50px; float: left; margin-right: 30px; }
+
+
+		#downloads_content .content li .left img { vertical-align: middle; margin-top: 40px; width: 120px; height: 120px; }
+
+		#downloads_content .content li .left:hover { background: rgb(52, 179, 160); }
+		#downloads_content .content li .right:hover { background: rgb(52, 179, 160); }
+		#downloads_content .content li .right:hover p, #downloads_content .content li .right:hover h1 { color: #fff; }
