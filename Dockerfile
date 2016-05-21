@@ -21,7 +21,7 @@ COPY ./Gemfile Gemfile
 COPY ./Gemfile.lock Gemfile.lock
 
 # Bundle
-RUN gem update --system
+# RUN gem update --system
 RUN gem sources -r https://rubygems.org/ -a https://gems.ruby-china.org/
 RUN gem install bundler
 RUN bundle config mirror.https://rubygems.org https://gems.ruby-china.org
