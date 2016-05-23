@@ -30,8 +30,8 @@ COPY nginx-env.conf /etc/nginx/main.d/nginx-env.conf
 RUN mkdir -p /etc/my_init.d
 
 #docker
-COPY docker.sh /etc/my_init.d/docker.sh
-RUN chmod +x /etc/my_init.d/docker.sh
+COPY docker-script.sh /etc/my_init.d/docker-script.sh
+RUN chmod +x /etc/my_init.d/docker-script.sh
 
 # 创建项目目录
 VOLUME ['/home/apps/web']
