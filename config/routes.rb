@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'oauth' => 'oauth#index'
+
   devise_for :users
   get 'download' => 'download#index'
 

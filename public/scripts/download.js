@@ -18,14 +18,12 @@ $(function() {
 
 // download-icon图标变化
 function downloadIconChange() {
-	$('.download-icon').each(function(key, value) {
-		var src = value.src;
-		// alert(src);
-		src = src.replace('.png', '-hover.png');
-		// alert(src);
-		
-		//changeSrc(value, src, 1000);
-
+	var arr = $('#downloads-content .windows');
+	$.each(arr, function() {
+		$(this).mouseover(function(key, value) {
+		alert($(this));
+			alert($(this) + ': '+key + ': '+value);
+		});	
 	});
 }
 
