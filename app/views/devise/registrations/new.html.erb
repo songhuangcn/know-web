@@ -6,9 +6,13 @@
     <%= devise_error_messages! %>
 
     <div class="oauth-field">
-      <%= f.email_field :email, autofocus: true, placeholder: '注册邮箱' %>
+      <%= f.email_field :email, autofocus: true, placeholder: '注册邮箱（登录、重置密码）' %>
     </div>
 
+<!--     <div class="oauth-field">
+      <%= f.text_field :username, autofocus: true, placeholder: '账户名（网站显示）' %>
+    </div>
+ -->
     <div class="oauth-field">
       <%= f.password_field :password, autocomplete: "off", placeholder: '账户密码，6-12位，区分大小写，不能用空格' %>
     </div>
