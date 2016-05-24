@@ -7,7 +7,7 @@
 	<meta name="description" content="Web学习网 - 为你的Web开发技能加分" />
 	<meta name="keywords" content="Web学习网, WebXX, WebXX.net, pinewong, 黄松" />
 	<meta property="qc:admins" content="05007507776752006654" />	<!-- QQ Open -->
-	<link rel="icon" href="images/icon_32x32.ico" sizes="32x32" />
+	<link rel="icon" href="/images/icon_32x32.ico" sizes="32x32" />
 	<link rel="icon" href="" sizes="192x192" />
 	<link rel="apple-touch-icon-precomposed" href="" sizes="180x180" />
 
@@ -17,24 +17,23 @@
 	<link href="/styles/study.css" rel="stylesheet" />
 	<link href="/styles/download.css" rel="stylesheet" />
 	<script type="text/javascript" src="/scripts/libs/jquery-2.2.2.min.js"></script>
-	<script type="text/javascript" src="/scripts/base.js"></script>
-	<script type="text/javascript" src="/scripts/home.js"></script>
-	<script type="text/javascript" src="/scripts/study.js"></script>
-	<script type="text/javascript" src="/scripts/download.js"></script>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
+<!-- 全局 -->
 <%= render '/panels/backTop' %>
-<%= render '/panels/nav' %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<%= render '/panels/nav' %>
+<!-- <p class="notice"><%= notice %></p> -->
+<!-- <p class="alert"><%= alert %></p> -->
+
 <%= yield %>
 
 <%= render '/panels/link' %>
 <%= render '/panels/copyright' %>
+<script type="text/javascript" src="/scripts/base.js"></script>
 </body>
 </html>

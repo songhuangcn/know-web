@@ -19,6 +19,9 @@ echo '/*** Bundle Install:';
 gem install bundler;
 bundle config mirror.https://rubygems.org https://gems.ruby-china.org;
 bundle install;
+
+
+echo '/*** Rake Asset:';
 rake assets:precompile;
 
 # echo '/*** Bundle install:'

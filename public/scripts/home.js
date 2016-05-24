@@ -31,12 +31,12 @@ function slide() {
 	// 鼠标经过停止轮播
 	$('#banner').mouseover(function() {
 		clearInterval(slide);
-		$('#banner').animate({ opacity: 0.8 });
+		// $('#banner').animate({ opacity: 0.8 });
 	});
 	// 鼠标离开开始轮播
 	$('#banner').mouseout(function() {
 		slide = setInterval(slideAuto, 5000);
-		$('#banner').animate({ opacity: 1 });
+		// $('#banner').animate({ opacity: 1 });
 	});
 
 
