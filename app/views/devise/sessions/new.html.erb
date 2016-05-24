@@ -14,12 +14,12 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="oauth-field">
       <!--  <%= f.label :email %><br /> -->
-      <%= f.email_field :email, autofocus: true, class: 'input', placeholder: '请输入登录邮箱' %>
+      <%= f.email_field :email, autofocus: true, placeholder: '请输入登录邮箱' %>
     </div>
 
     <div class="oauth-field">
       <!-- <%= f.label :password %><br /> -->      
-      <%= f.password_field :password, autocomplete: "off", class: 'input', placeholder: '请输入账户密码，6-12位，区分大小写，不能用空格' %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: '请输入账户密码（6-12位，区分大小写，不能用空格）' %>
     </div>
 
     <div class="tips">
@@ -28,7 +28,7 @@
       <%= f.label :remember_me, '记住我' %>
       <% end -%>
 
-      <%= link_to "忘记密码?", new_password_path(resource_name), class: 'forget' %>
+      <%= link_to "忘记密码?", new_password_path(resource_name), class: 'forget oauth-link-a' %>
     </div>
 
     <div class="oauth-actions">
