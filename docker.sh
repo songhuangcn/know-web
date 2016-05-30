@@ -12,12 +12,12 @@
 
 # RUN gem update --system
 echo '/*** Gem Source:';
-gem sources -r https://rubygems.org/ -a https://gems.ruby-china.org/;
+# gem sources -r https://rubygems.org/ -a https://gems.ruby-china.org/;
 gem source;
 
 echo '/*** Bundle Install:';
-gem install bundler;
-bundle config mirror.https://rubygems.org https://gems.ruby-china.org;
+# gem install bundler;
+# bundle config mirror.https://rubygems.org https://gems.ruby-china.org;
 bundle install;
 
 
