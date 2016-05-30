@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
-  get 'oauth' => 'oauth#index'
+  # 认证
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  get 'signup' => 'users#new'
 
-  devise_for :users
+  # 控制器
   get 'download' => 'download#index'
-
   get 'study' => 'study#index'
 
-  get 'home' => 'home#index'
+  # 资源
+  resources :topics do
+    resources :comments
+  end
+  resources :users
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,5 +1,5 @@
 <!-- 下载提示 -->
-<div id="downloads_tip"><div class="wrap_pines">
+<div id="downloads_tip"><div class="pine-wrap">
 	<h1>工具下载</h1>
 	<p>工欲善其事，必先利其器!</p>
 	<p>每个工匠都有一套属于自己的工具，随着时间，他们与工具之间不断相互磨合。</p>
@@ -7,7 +7,7 @@
 </div></div>
 
 <!-- 内容 -->
-<div id="downloads_content"><div class="wrap_pines" style="padding: 0 0 50px 0;">
+<div id="downloads_content"><div class="pine-wrap" style="padding: 0 0 50px 0;">
 	<div class="decorate"></div>
 	<div class="category"><select>
 		<option value="editors">编辑器</option>
@@ -16,38 +16,38 @@
 	</select></div>
 	<div class="content" id="down-editors"><ul>
 		<li>
-			<a class="left" target="_blank" href="https://www.sublimetext.com/"><img src="/images/sublime.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="https://www.sublimetext.com/"><%= image_tag 'sublime.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>Sublime Text</h1>
 				<p>Sublime Text 是一个代码编辑器（Sublime Text 2是收费软件，但可以无限期试用），也是HTML和散文先进的文本编辑器。Sublime Text是由程序员Jon Skinner于2008年1月份所开发出来，它最初被设计为一个具有丰富扩展功能的Vim。</p>
 				<p>
-					<a href="https://download.sublimetext.com/Sublime%20Text%20Build%203114%20x64%20Setup.exe" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="https://download.sublimetext.com/Sublime%20Text%20Build%203114.dmg" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="https://download.sublimetext.com/sublime-text_build-3114_amd64.deb" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="https://download.sublimetext.com/Sublime%20Text%20Build%203114%20x64%20Setup.exe" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="https://download.sublimetext.com/Sublime%20Text%20Build%203114.dmg" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="https://download.sublimetext.com/sublime-text_build-3114_amd64.deb" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
 		<li>
-			<a class="left" target="_blank" href="http://www.gnuemacs.org/"><img src="/images/emacs.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="http://www.gnuemacs.org/"><%= image_tag 'emacs.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>GNU Emacs</h1>
 				<p>EMACS，即Editor MACroS（编辑器宏）的缩写，著名的集成开发环境和文本编辑器，最初由Richard Stallman(理查德·马修·斯托曼)于1975年在MIT协同Guy Steele共同完成。</p>
 				<p>
-					<a href="http://ftp.gnu.org/gnu/emacs/windows/emacs-24.5-bin-i686-mingw32.zip" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="https://emacsformacosx.com/emacs-builds/Emacs-24.5-1-universal.dmg " target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="http://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.gz" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="http://ftp.gnu.org/gnu/emacs/windows/emacs-24.5-bin-i686-mingw32.zip" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="https://emacsformacosx.com/emacs-builds/Emacs-24.5-1-universal.dmg " target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="http://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.gz" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
 		<li>
-			<a class="left" target="_blank" href="http://www.vim.org/"><img src="/images/vim.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="http://www.vim.org/"><%= image_tag 'vim.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>Vim</h1>
 				<p>Vim是一个类似于Vi的著名的功能强大、高度可定制的文本编辑器，在Vi的基础上改进和增加了很多特性。VIM是纯粹的自由软件。Vim普遍被推崇为类Vi编辑器中最好的一个</p>
 				<p>
-					<a href="ftp://ftp.vim.org/pub/vim/pc/gvim74.exe" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="https://github.com/macvim-dev/macvim/releases/download/snapshot-104/MacVim.dmg" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="ftp://ftp.vim.org/pub/vim/pc/gvim74.exe" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="https://github.com/macvim-dev/macvim/releases/download/snapshot-104/MacVim.dmg" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
@@ -55,56 +55,56 @@
 	<div class="content" id="down-ides" style="display: none;"><ul>
 		<!-- WebStorm -->
 		<li>
-			<a class="left" target="_blank" href="http://www.jetbrains.com/webstorm/"><img src="/images/webstorm.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="http://www.jetbrains.com/webstorm/"><%= image_tag 'webstorm.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>Jetbrains WebStorm</h1>
 				<p>WebStorm 是jetbrains公司旗下一款JavaScript 开发工具。被广大中国JS开发者誉为“Web前端开发神器”、“最强大的HTML5编辑器”、“最智能的JavaScript IDE”等。与IntelliJ IDEA同源，继承了IntelliJ IDEA强大的JS部分的功能。</p>
 				<p>
-					<a href="http://www.jetbrains.com/webstorm/download/download-thanks.html?platform=windows" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="http://www.jetbrains.com/webstorm/download/download-thanks.html?platform=mac" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="http://www.jetbrains.com/webstorm/download/download-thanks.html?platform=linux" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="http://www.jetbrains.com/webstorm/download/download-thanks.html?platform=windows" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="http://www.jetbrains.com/webstorm/download/download-thanks.html?platform=mac" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="http://www.jetbrains.com/webstorm/download/download-thanks.html?platform=linux" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
 
 		<!-- Eclipse -->
 		<li>
-			<a class="left" target="_blank" href="https://www.eclipse.org/"><img src="/images/eclipse.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="https://www.eclipse.org/"><%= image_tag 'eclipse.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>Eclipse</h1>
 				<p>Eclipse 是一个开放源代码的、基于Java的可扩展开发平台。就其本身而言，它只是一个框架和一组服务，用于通过插件组件构建开发环境。幸运的是，Eclipse 附带了一个标准的插件集，包括Java开发工具（Java Development Kit，JDK）。</p>
 				<p>
-					<a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/2/eclipse-java-mars-2-win32-x86_64.zip" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/2/eclipse-java-mars-2-macosx-cocoa-x86_64.tar.gz" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/2/eclipse-java-mars-2-linux-gtk-x86_64.tar.gz" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/2/eclipse-java-mars-2-win32-x86_64.zip" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/2/eclipse-java-mars-2-macosx-cocoa-x86_64.tar.gz" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/2/eclipse-java-mars-2-linux-gtk-x86_64.tar.gz" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
 
 		<!-- GitHub Atom -->
 		<li>
-			<a class="left" target="_blank" href="https://atom.io/"><img src="/images/atom.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="https://atom.io/"><%= image_tag 'atom.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>GitHub Atom</h1>
 				<p>Atom 是专门为程序员推出的一个跨平台文本编辑器。具有简洁和直观的图形用户界面，并有很多有趣的特点：支持CSS，HTML，JavaScript等网页编程语言。它支持宏，自动完成分屏功能，集成了文件管理器。</p>
 				<p>
-					<a href="https://github.com/atom/atom/releases/download/v1.7.3/atom-windows.zip" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="https://github.com/atom/atom/releases/download/v1.7.3/atom-mac.zip" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="https://github.com/atom/atom/releases/download/v1.7.3/atom-amd64.deb" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="https://github.com/atom/atom/releases/download/v1.7.3/atom-windows.zip" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="https://github.com/atom/atom/releases/download/v1.7.3/atom-mac.zip" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="https://github.com/atom/atom/releases/download/v1.7.3/atom-amd64.deb" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
 
 		<!-- XAMPP -->
 		<li>
-			<a class="left" target="_blank" href="https://www.apachefriends.org/"><img src="/images/xampp.jpg" alt="pic" /></a>
+			<a class="left" target="_blank" href="https://www.apachefriends.org/"><%= image_tag 'xampp.jpg', alt: 'pic' %></a>
 			<div class="right">
 				<h1>XAMPP</h1>
 				<p>XAMPP（Apache+MySQL+PHP+PERL）是一个功能强大的建站集成软件包,易于安装且包含 MySQL、PHP 和 Perl 的 Apache 发行版，只需下载，解压缩，启动即可。</p>
 				<p>
-					<a href="https://www.apachefriends.org/xampp-files/5.6.21/xampp-win32-5.6.21-0-VC11-installer.exe" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="https://www.apachefriends.org/xampp-files/5.6.21/xampp-osx-5.6.21-0-installer.dmg" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="https://www.apachefriends.org/xampp-files/5.6.21/xampp-linux-x64-5.6.21-0-installer.run" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="https://www.apachefriends.org/xampp-files/5.6.21/xampp-win32-5.6.21-0-VC11-installer.exe" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="https://www.apachefriends.org/xampp-files/5.6.21/xampp-osx-5.6.21-0-installer.dmg" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="https://www.apachefriends.org/xampp-files/5.6.21/xampp-linux-x64-5.6.21-0-installer.run" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
@@ -112,73 +112,74 @@
 	<div class="content" id="down-tools" style="display: none;"><ul>
 		<!-- Google Chrome -->
 		<li>
-			<a class="left" target="_blank" href="http://www.google.cn/chrome/browser/"><img src="/images/chrome.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="http://www.google.cn/chrome/browser/"><%= image_tag 'chrome.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>Google Chrome</h1>
 				<p>Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器，目标是提升稳定性、速度和安全性，并创造出简单且有效率的使用者界面。</p>
 				<p>
-					<a href="http://222.204.1.115/sw-search-sp/software/29cd900ea7d/ChromeStandalone_50.0.2661.102_Setup.exe?&ncs_hash_key_one=e9&ncs_hash_key_two=82&ncs_hash_key=e98296f6b54a6707b693f72cddc8978d&ncs_dir=0003/download&" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="https://www.baidu.com/link?url=wGTAeuBpRkqwK-l6Y1HL3qezBFT-x1hbrKQx673XbUAK9Rmw2xfFgZJCOeU6BtD9gi3HFLsfLuRs9GEP2vhx4nfpTQPQM-vM1RXVJLt04nu&wd=&eqid=9f98f322000d225b00000003573dc72d" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="https://download.sublimetext.com/sublime-text_build-3114_amd64.deb" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="http://222.204.1.115/sw-search-sp/software/29cd900ea7d/ChromeStandalone_50.0.2661.102_Setup.exe?&ncs_hash_key_one=e9&ncs_hash_key_two=82&ncs_hash_key=e98296f6b54a6707b693f72cddc8978d&ncs_dir=0003/download&" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="https://www.baidu.com/link?url=wGTAeuBpRkqwK-l6Y1HL3qezBFT-x1hbrKQx673XbUAK9Rmw2xfFgZJCOeU6BtD9gi3HFLsfLuRs9GEP2vhx4nfpTQPQM-vM1RXVJLt04nu&wd=&eqid=9f98f322000d225b00000003573dc72d" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="https://download.sublimetext.com/sublime-text_build-3114_amd64.deb" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
 
 		<!-- Safari -->
 		<li>
-			<a class="left" target="_blank" href="https://www.apple.com/"><img src="/images/safari.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="https://www.apple.com/"><%= image_tag 'safari.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>Apple Safari</h1>
 				<p>Safari,苹果计算机的最新操作系统Mac OS X中新的浏览器，用来取代之前的Internet ExplorerforMac。Safari使用了KDE的KHTML作为浏览器的计算核心。</p>
 				<p>
-					<a href="https://www.baidu.com/link?url=Qcd40fAUWYKFeS5pTb0WujxQxPAG6r33P4pm6HD0_e4e0n6q8jDCKHfhzYCnzFzqwb4vr87P_yaTZCW4myNiR8B1JcqTB_SkZ_xj6ATdk7e&wd=&eqid=c3d1489e0007639400000003573dc7d4" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="https://www.baidu.com/link?url=RJvGdCn8rKbsJQItidrrcGQwqJP1gIJKqWrDIOp0NMntKbatDzKZrASlEZk8OcGswjALfstIo7XeCvKvXNB_3b8jDXHUXh4-eVrUIEOVKUu&wd=&eqid=c3d1489e0007639400000003573dc7d4" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="#" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="https://www.baidu.com/link?url=Qcd40fAUWYKFeS5pTb0WujxQxPAG6r33P4pm6HD0_e4e0n6q8jDCKHfhzYCnzFzqwb4vr87P_yaTZCW4myNiR8B1JcqTB_SkZ_xj6ATdk7e&wd=&eqid=c3d1489e0007639400000003573dc7d4" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="https://www.baidu.com/link?url=RJvGdCn8rKbsJQItidrrcGQwqJP1gIJKqWrDIOp0NMntKbatDzKZrASlEZk8OcGswjALfstIo7XeCvKvXNB_3b8jDXHUXh4-eVrUIEOVKUu&wd=&eqid=c3d1489e0007639400000003573dc7d4" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="#" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
 
 		<!-- Git -->
 		<li>
-			<a class="left" target="_blank" href="https://git-scm.com/"><img src="/images/github.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="https://git-scm.com/"><%= image_tag 'github.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>Github Git</h1>
 				<p>Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</p>
 				<p>
-					<a href="https://git-scm.com/download/win" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="https://git-scm.com/download/mac" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="https://git-scm.com/download/linux" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="https://git-scm.com/download/win" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="https://git-scm.com/download/mac" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="https://git-scm.com/download/linux" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
 
 		<!-- Oracle VirtualBox -->
 		<li>
-			<a class="left" target="_blank" href="https://www.virtualbox.org/"><img src="/images/virtualbox.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="https://www.virtualbox.org/"><%= image_tag 'virtualbox.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>Oracle VirtualBox</h1>
 				<p>VirtualBox号称是最强的免费虚拟机软件，它不仅具有丰富的特色，而且性能也很优异！它简单易用，现在则由甲骨文公司进行开发，是甲骨文公司xVM虚拟化平台技术的一部份。</p>
 				<p>
-					<a href="http://download.virtualbox.org/virtualbox/5.0.20/VirtualBox-5.0.20-106931-Win.exe" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="http://download.virtualbox.org/virtualbox/5.0.20/VirtualBox-5.0.20-106931-OSX.dmg" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="https://www.virtualbox.org/wiki/Linux_Downloads" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="http://download.virtualbox.org/virtualbox/5.0.20/VirtualBox-5.0.20-106931-Win.exe" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="http://download.virtualbox.org/virtualbox/5.0.20/VirtualBox-5.0.20-106931-OSX.dmg" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="https://www.virtualbox.org/wiki/Linux_Downloads" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
 
 		<!-- Adobe Photoshop -->
 		<li>
-			<a class="left" target="_blank" href="http://www.adobe.com/cn/products/photoshop.html"><img src="/images/ps.png" alt="pic" /></a>
+			<a class="left" target="_blank" href="http://www.adobe.com/cn/products/photoshop.html"><%= image_tag 'ps.png', alt: 'pic' %></a>
 			<div class="right">
 				<h1>Adobe Photoshop</h1>
 				<p>Adobe Photoshop，简称“PS”，Photoshop主要处理以像素所构成的数字图像。使用其众多的编修与绘图工具，可以有效地进行图片编辑工作。ps有很多功能，在图像、图形、文字、视频、出版等各方面都有涉及。</p>
 				<p>
-					<a href="https://www.baidu.com/link?url=XUY56jwAO5o4ZuLU5Izfg47KGt6PgVZ4b04CSnUW0wx1QAVBesqWzFsADDkZSn7kGt1GwfOEDytPEeqgtCIPYgwEEHLV4BWzi3ae9q0kDGu&wd=&eqid=b7e674e5000cd60a00000003573dc969" target="_blank"><img class="windows download-icon" src="/images/windows.png" alt="" /></a>
-					<a href="https://www.baidu.com/link?url=LNIfY4vg1wYhxr6UqZrFsBT-MzGrzyE0REZX9-z7-Dle4lmQtJDgF_r9mlHJ-rUEb65kLH1BAq3HA-cqhk6kbekCJFTeIIeTbK9t0Y6B_Yq&wd=&eqid=b7e674e5000cd60a00000003573dc969" target="_blank"><img class="mac download-icon" src="/images/mac.png" alt="" /></a>
-					<a href="#" target="_blank"><img class="linux download-icon" src="/images/linux.png" alt="" /></a>
+					<a href="https://www.baidu.com/link?url=XUY56jwAO5o4ZuLU5Izfg47KGt6PgVZ4b04CSnUW0wx1QAVBesqWzFsADDkZSn7kGt1GwfOEDytPEeqgtCIPYgwEEHLV4BWzi3ae9q0kDGu&wd=&eqid=b7e674e5000cd60a00000003573dc969" target="_blank"><%= image_tag 'windows.png', class: 'download-icon windows', alt: '' %></a>
+					<a href="https://www.baidu.com/link?url=LNIfY4vg1wYhxr6UqZrFsBT-MzGrzyE0REZX9-z7-Dle4lmQtJDgF_r9mlHJ-rUEb65kLH1BAq3HA-cqhk6kbekCJFTeIIeTbK9t0Y6B_Yq&wd=&eqid=b7e674e5000cd60a00000003573dc969" target="_blank"><%= image_tag 'mac.png', class: 'mac download-icon', alt: '' %></a>
+					<a href="#" target="_blank"><%= image_tag 'linux.png', class: 'download-icon linux', alt: '' %></a>
 				</p>
 			</div>
 		</li>
 	</ul></div>
-</div></div>
+</div>
+</div>
 

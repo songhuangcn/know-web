@@ -1,0 +1,30 @@
+<div id="nav"><div class="pine-wrap">
+	<div id="logo" class="float_left">
+		<a href="<%= url_for '/' %>"><img src="/images/logo3.png" alt="" /></a>
+	</div>
+
+	<div id="menu" class="float_left">
+		<ul>
+			<li><a href="<%= root_path %>" <% if params[:controller] == 'home' %>class="selected"<% end %>>首页</a></li>
+			<li><a href="<%= study_path %>" <% if params[:controller] == 'study' %>class="selected"<% end %>>在线学习</a></li>
+			<li><a href="<%= download_path %>" <% if params[:controller] == 'download' %>class="selected"<% end %>>工具下载</a></li>
+			<li><a href="<%= topics_path %>" <% if params[:controller] == 'topics' %>class="selected"<% end %>>互动讨论</a></li>
+			<li><a target="_blank" href="http://www.pinewong.com/">作者笔记</a></li>
+		</ul>
+	</div>
+	
+	<!-- 登陆显示 -->
+	<% if logged_in? %>
+	<div id="nav-login" class="float_right">
+		<%= link_to current_user.username, current_user, class: 'username' %>
+		<%= link_to '注销', logout_path, method: 'delete', class: 'logout' %>
+	</div>
+
+	<!-- 未登录显示 -->
+	<% else %>
+	<div id="nav-login" class="float_right">
+		<%= link_to '注册', signup_path, class: 'signup' %>
+		<%= link_to '登陆', login_path, class: 'login' %>
+	</div>
+	<% end %>
+</div></div>

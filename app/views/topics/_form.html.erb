@@ -1,0 +1,21 @@
+<%= form_for @topic, html: { id: 'topics-new-form' } do |f| %>
+	<!-- 类别 -->
+  <div class="category">
+    <%= f.label :category, '选择版块：' %>
+    <%= f.select :category, options_for_select([['问答', '问答'], ['分享', '分享'], ['瞎扯淡', '瞎扯淡']], '瞎扯淡') %>
+  </div>
+
+	<!-- 标题 -->
+  <div>
+    <%= f.text_field :title, placeholder: '标题（请描述清晰，10字以上，20字以内）', class: 'title' %>
+  </div>
+
+	<div>
+    <%= f.text_area :content, class: 'area-content', placeholder: '内容（10字以上，1000字以内）' %>
+	</div>
+
+	<!-- 提交 -->
+  <div>
+    <%= f.submit defined?(submitName) ? submitName : '提交', class: 'submit' %>
+  </div>
+<% end %>

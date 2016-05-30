@@ -1,0 +1,78 @@
+<div id="user_edit"><div class="pine-container">
+  <!-- 左侧信息 -->
+  <div class="pine-left">
+    <!-- 头像，话题 -->
+    <div class="topics user-edit-cell">
+      <div class="header"><%= gravatar_for @user %></div> 
+      <%= link_to '我的话题', root_path, class: 'topic-link' %>
+      <%= link_to '我参与的话题', root_path, class: 'topic-link' %>
+    </div>
+
+    <!-- 第三方认证 -->
+    <div class="add-oauth user-edit-cell">
+      <h2 class="title">绑定其他账号</h2>
+      <p class="oauth-item"><%= link_to 'GitHub', root_path %></p>
+      <p class="oauth-item"><%= link_to '微信', root_path %></p>
+    </div>
+  </div>
+
+  <!-- 右侧表单 -->
+  <div class="pine-right">
+    <!-- 资料设置 -->
+    <div class="info user-edit-cell">
+      <h2 class="title">个人资料设置</h2>
+      <%= form_for @user do |f| %>
+        <div class="field">
+          <%= f.label :username, '账户名（登陆、网站显示，6-12位）' %>
+          <%= f.text_field :username, autofocus: true %>
+        </div>
+     
+        <div class="field">
+          <%= f.label :email, '账户邮箱（重置密码）' %>
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+     
+        <div class="field">
+          <%= f.label :sign, '签名（个人信息展示）' %>
+          <%= f.text_field :sign, autofocus: true %>
+        </div>
+
+
+        <%= hidden_field_tag(:revise, 'info') %>        
+
+        <div class="submit">
+          <%= f.submit '更新资料' %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- 修改密码 -->
+    <div class="password user-edit-cell">
+      <h2 class="title">修改密码</h2>
+
+      <%= form_for @user do |f| %>
+        <div class="field">
+          <%= f.label :password_old, '旧密码' %>
+          <%= f.password_field :password_old, autocomplete: "off" %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :password, '新密码（6-12位，区分大小写，不能用空格）' %>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, '确认密码' %>
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+        <%= hidden_field_tag(:revise, 'password') %>        
+
+        <div class="submit">
+          <%= f.submit '修改密码' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div></div>
+

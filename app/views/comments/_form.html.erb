@@ -1,0 +1,13 @@
+<div class="pine-content">
+	<%= form_for [@topic, @topic.comments.build], html: { id: 'topics_reply_form' } do |f| %>
+		<!-- 内容 -->
+		<div>
+	    <%= f.text_area :content, class: 'area-content', placeholder: '内容（10字以上，200字以内）' %>
+		</div>
+
+		<!-- 提交 -->
+		<div>
+		<%= f.submit defined?(submitName) || '提交', class: 'submit' %>
+		</div>
+	<% end %>
+</div>

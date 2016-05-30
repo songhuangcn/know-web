@@ -1,0 +1,48 @@
+<div id="user_show"><div class="pine-container">
+  <!-- 左侧信息 -->
+  <div class="pine-left">
+    <!-- 头像，话题 -->
+    <div class="topics user-edit-cell">
+      <div class="header"><%= gravatar_for @user %></div> 
+      <p><%= link_to 'Ta发布的话题', root_path, class: 'topic-link' %></p>
+      <p><%= link_to 'Ta参与的话题', root_path, class: 'topic-link' %></p>
+      <p><%= link_to '我发布的话题', root_path, class: 'topic-link' %></p>
+      <p><%= link_to '我参与的话题', root_path, class: 'topic-link' %></p>
+    </div>
+
+    <!-- 第三方账号 -->
+    <div class="add-oauth user-edit-cell">
+      <h2 class="title">用户关联账号</h2>
+      <p class="oauth-item">GitHub：<%= link_to '@GitHub', root_path %></p>
+      <p class="oauth-item">微信：<%= link_to '@WeiChat', root_path %></p>
+    </div>
+  </div>
+
+  <!-- 右侧表单 -->
+  <div class="pine-right">
+    <!-- 资料设置 -->
+    <div class="info user-edit-cell">
+      <h2 class="title">个人资料<%= link_to '设置', edit_user_path, class: 'setting' %></h2>
+        <div class="field">
+          <%= label_tag :username, '账户名（登陆、网站显示，6-12位）' %>
+          <%= text_field_tag :username, @user.username, disabled: 'false' %>
+        </div>
+     
+        <div class="field">
+          <%= label_tag :email, '账户邮箱（重置密码）' %>
+          <%= email_field_tag :email, @user.email, disabled: 'false' %>
+        </div>
+     
+        <div class="field">
+          <%= label_tag :sign, '签名（个人信息展示）' %>
+          <%= text_field_tag :sign, @user.sign, disabled: 'false' %>
+        </div>
+
+        <div class="field">
+          <%= label_tag :score, '用户积分' %>
+          <%= text_field_tag :score, @user.score, disabled: 'false' %>
+        </div>
+    </div>
+  </div>
+</div></div>
+
