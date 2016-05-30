@@ -1,5 +1,8 @@
 <!-- <div class="topics-title"><h2>热门话题</h2></div> -->
 <div class="content" id="topics_pubbanner">
-	<div><a class="pub" href="<%= new_topic_path %>">发布话题</a></div>	
+	<div><a class="pub" href="<%= new_topic_path %>">发布话题</a></div>
+	<!-- 未登录提示 -->
+	<% if !logged_in? %>
 	<div class="tip">你还未登陆，发布话题前请先登录</div>	
+	<% end %>
 </div>

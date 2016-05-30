@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	# 授权
 	before_action :logged_in_user, only: [:edit, :update]
 	before_action :correct_user, only: [:edit, :update]
+	
 	def new
 		@user = User.new
 	end
@@ -33,8 +34,8 @@ class UsersController < ApplicationController
 			render 'new' and return
 		else
 			log_in @user
-			flash[:success] = "注册成功。#{@user.username}，欢迎来到Web学习网"
-			redirect_to @user and return
+			flash[:success] = "注册成功。#{@user.username}，欢迎来到Web学习网，为了让大家更好的认识你，请先补全信息"
+			redirect_to edit_user_path(@user) and return
 		end
 	end
 
@@ -103,15 +104,6 @@ class UsersController < ApplicationController
 	    def correct_user
 	      @user = User.find(params[:id])
 	      redirect_to(root_url) if !current_user?(@user)
-	    end
-
-		# 确保用户已登录
-	    def logged_in_user
-	      if !logged_in?
-			store_location	        
-			flash[:danger] = "请先登录！"
-	        redirect_to login_url
-	      end
 	    end
 
 		# 传参处理

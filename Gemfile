@@ -4,6 +4,10 @@ source 'https://rubygems.org'
 
 # has_secure_password
 gem 'bcrypt', '3.1.7'
+# 分页
+gem 'will_paginate', '3.0.7'
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'

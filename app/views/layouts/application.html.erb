@@ -9,8 +9,7 @@
 	<link rel="icon" href="/images/icon_32x32.ico" sizes="32x32" />
 	<link rel="icon" href="" sizes="192x192" />
 	<link rel="apple-touch-icon-precomposed" href="" sizes="180x180" />
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
@@ -21,5 +20,7 @@
 	<%= render '/shared/copyright' %>
 	<%= render '/shared/debug' %>
 	<%= render '/shared/flashAlert' %>
+
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

@@ -1,9 +1,9 @@
 <div class="topics-title"><h2 class="authorname">作者</h2></div>
 <div id="topics-author">
-	<div class="info">
-		<span><a href="#"><%= image_tag 'topic-pic.png', class: 'header' %></a></span>
-		<span class="name">PineWong</span>
-	</div>
-	<div class="score">积分: 1308</div>
-	<div class="sign">养心莫善寡欲，至乐无如读书！</div>
+	<span class="header"><%= gravatar_for @topic.user %></span>
+	<span class="name"><%= @topic.user.username %></span>
+
+	<div class="email">邮箱：<%= @topic.user.email %></div>
+	<div class="score">积分：<%= @topic.user.score.nil? ? '0' : @topic.user.score %></div>
+	<div class="sign">签名：<%= @topic.user.sign %></div>
 </div>

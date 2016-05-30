@@ -5,4 +5,15 @@ class ApplicationController < ActionController::Base
 
   # 在所有控制器中引入session模块辅助方法
   include SessionsHelper
+
+	# 确保用户已登录
+	def logged_in_user
+		if !logged_in?
+			store_location	        
+			flash[:danger] = "请先登录！"
+			redirect_to login_url
+		end
+	end
+
+
 end

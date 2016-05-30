@@ -54,12 +54,11 @@ body { width: 1366px; margin: 0 auto; background: #fff; }
 	#nav-login { padding: 10px; }
 	/*#323A45*/
 	/*#nav-login a { display: inline-block; height: 40px; line-height: 40px; background: #323A45; color: #fff; }*/
-	#nav-login a { display: inline-block; height: 32px; line-height: 32px; border: solid 1px #323A45; border-radius: 2em; padding: 0 2em; font-size: 14px; font-family: '微软雅黑', 'Helvetica Neue', sans-serif, 'SimHei'; margin-left: 7px; transition: all 0.4s ease 0s; }
-	#nav-login a.signup, #nav-login a.login:hover { background: #323A45; color: #fff; }
-	#nav-login a.signup:hover, #nav-login a.login { background: #fff; color: #323A45; }
+	#nav-login .btn { display: inline-block; height: 32px; line-height: 32px; border: solid 1px #323A45; border-radius: 2em; padding: 0 2em; font-size: 14px; font-family: '微软雅黑', 'Helvetica Neue', sans-serif, 'SimHei'; margin-left: 7px; transition: all 0.4s ease 0s; }
+	#nav-login .signup, #nav-login .login:hover { background: #323A45; color: #fff; }
+	#nav-login .signup:hover, #nav-login .login { background: #fff; color: #323A45; }
 
-	#nav .current-user { display: inline-block; font-size: 14px; float: right; padding: 20px 0; color: #000; }
-	#nav .current-user a { color: #000; margin-left: 20px; }
+	#nav .link { color: #000; margin-left: 20px; display: inline-block; font-size: 14px; padding: 10px 0; color: #000; }
 
 /* 链接 */
 #link { background: rgb(30,31,36); padding: 30px 0; }
