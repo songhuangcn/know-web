@@ -1,9 +1,9 @@
 <div id="nav"><div class="pine-wrap">
 	<div id="logo" class="float_left">
-		<a href="<%= url_for '/' %>"><img src="/images/logo3.png" alt="" /></a>
+		<a href="<%= root_path %>"><%= image_tag 'logo3.png', alt: '' %></a>
 	</div>
 
-	<div id="menu" class="float_left">
+	<div id="menu" class="pine-left">
 		<ul>
 			<li><a href="<%= root_path %>" <% if params[:controller] == 'home' %>class="selected"<% end %>>首页</a></li>
 			<li><a href="<%= study_path %>" <% if params[:controller] == 'study' %>class="selected"<% end %>>在线学习</a></li>
@@ -15,16 +15,16 @@
 	
 	<!-- 登陆显示 -->
 	<% if logged_in? %>
-	<div id="nav-login" class="float_right">
-		<%= link_to current_user.username, current_user, class: 'username' %>
-		<%= link_to '注销', logout_path, method: 'delete', class: 'logout' %>
+	<div id="nav-login" class="pine-right">
+		<%= link_to current_user.username, current_user, class: 'username link' %>
+		<%= link_to '注销', logout_path, method: 'delete', class: 'logout link' %>
 	</div>
 
 	<!-- 未登录显示 -->
 	<% else %>
-	<div id="nav-login" class="float_right">
-		<%= link_to '注册', signup_path, class: 'signup' %>
-		<%= link_to '登陆', login_path, class: 'login' %>
+	<div id="nav-login" class="pine-right">
+		<%= link_to '注册', signup_path, class: 'signup btn' %>
+		<%= link_to '登陆', login_path, class: 'login btn' %>
 	</div>
 	<% end %>
 </div></div>

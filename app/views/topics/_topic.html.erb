@@ -1,0 +1,25 @@
+<div class="cell">
+	<!-- 头像 -->
+	<span class="pine-left pic">
+		<%= gravatar_for topic.user %>
+	</span>
+	<!-- 统计 -->
+	<span class="count pine-left">12/122</span>
+	<!-- 精华 -->
+	<span class="label pine-left selected"><%= topic.category.nil? ? '瞎扯淡' : topic.category %></span>
+	<!-- 标题 -->
+	<span class="pine-left title"><%= link_to topic.title, topic_path(topic) %></span>
+	<!-- 时间 -->
+	<span class="pine-right time"><%= topic.created_at.strftime('%Y-%m-%d') %></span>
+	<!-- 回复 -->
+	<span class="pine-right reply replypic">
+		<a href="">
+			<%= gravatar_for topic.user %>
+		</a>
+	</span>
+
+	<% if current_user == topic.user %>
+	<!-- 删除链接 -->
+	<span class="pine-right delete"><%= link_to '删除文章', topic_path(topic), method: :delete %> </span>
+	<% end %>
+</div>

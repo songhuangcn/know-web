@@ -6,7 +6,8 @@ module ApplicationHelper
 	end
 
 	def gravatar_for(user)
-	    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+		email = user.email.nil? ? 'user@example.com' : user.email
+	    gravatar_id = Digest::MD5::hexdigest(email.downcase)
 	    gravatar_url = "http://cn.gravatar.com/avatar/#{gravatar_id}"
 	    link_to image_tag(gravatar_url, alt: user.username, class: "gravatar"), 'http://cn.gravatar.com/';
   	end

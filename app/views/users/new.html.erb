@@ -15,14 +15,6 @@
       <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: '确认账户密码' %>
     </div>
 
-    <div class="oauth-field">
-      <%= f.email_field :email, autofocus: true, placeholder: '注册邮箱（重置密码）' %>
-    </div>
-
-    <div class="oauth-field">
-      <%= f.text_field :sign, autofocus: true, placeholder: '个性签名（50字以内）' %>
-    </div>
-
     <div class="oauth-actions">
       <%= f.submit "注册" %>
     </div>

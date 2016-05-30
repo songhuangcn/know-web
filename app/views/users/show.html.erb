@@ -4,10 +4,16 @@
     <!-- 头像，话题 -->
     <div class="topics user-edit-cell">
       <div class="header"><%= gravatar_for @user %></div> 
-      <p><%= link_to 'Ta发布的话题', root_path, class: 'topic-link' %></p>
-      <p><%= link_to 'Ta参与的话题', root_path, class: 'topic-link' %></p>
+      <!-- 当前信息用户登录 -->
+      <% if (logged_in? && current_user?(@user)) %>
       <p><%= link_to '我发布的话题', root_path, class: 'topic-link' %></p>
       <p><%= link_to '我参与的话题', root_path, class: 'topic-link' %></p>
+      
+      <!-- 非当前信息用户 -->
+      <% else %>
+      <p><%= link_to 'Ta发布的话题', root_path, class: 'topic-link' %></p>
+      <p><%= link_to 'Ta参与的话题', root_path, class: 'topic-link' %></p>
+      <% end %>
     </div>
 
     <!-- 第三方账号 -->
@@ -22,7 +28,12 @@
   <div class="pine-right">
     <!-- 资料设置 -->
     <div class="info user-edit-cell">
-      <h2 class="title">个人资料<%= link_to '设置', edit_user_path, class: 'setting' %></h2>
+      <h2 class="title">个人资料
+        <!-- 当前信息用户登录 -->
+        <% if (logged_in? && current_user?(@user)) %>
+        <%= link_to '设置', edit_user_path, class: 'setting' %>
+        <% end %>
+      </h2>
         <div class="field">
           <%= label_tag :username, '账户名（登陆、网站显示，6-12位）' %>
           <%= text_field_tag :username, @user.username, disabled: 'false' %>
