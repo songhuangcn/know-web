@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-05-28 10:40:02
+ * @version $Id$
+ */
+
+$base-padding: 20px;
+$base-bg-color: #f8504b;
+$base-item-color: #fff;
+
+/* edit */
+#user_edit {
+	background: #aaa;
+
+	/* 左侧信息 */
+	.pine-left {
+		width: 25%;
+
+		.topics { 
+			.gravatar { width: 120px; height: 120px; margin: 0 auto 20px; }
+			.setting-link, .topic-link { display: block; height: 30px; line-height: 30px; }
+		}
+
+		.add-oauth {
+			.oauth-item { display: block; height: 30px; line-height: 30px; }			
+		}
+	}
+
+	/* 右侧表单 */
+	.pine-right {
+		width: 70%;
+		
+		.field { 
+			margin-bottom: 20px;
+			label { margin-bottom: 10px; display: block; }
+			input { height: 20px; width: 80%; color: rgba(0,0,0,.7); border: 1px solid rgba(0,0,0,.15); border: 1px solid rgba(0,0,0,.15); padding: .65em 1em; border-radius: .3125em; }
+		}
+
+		.submit { 
+			input { padding: 10px 20px; border: none; border-radius: 3px; background: $base-bg-color; color: $base-item-color; letter-spacing: 2px; font-size: 14px; cursor: pointer; }
+		}
+	}
+
+
+
+	/* 通用样式 */
+	.user-edit-cell { padding: $base-padding; background: #fff; margin-bottom: 20px; }
+	.title { font-size: 18px; color: rgba(0,0,0,.75); text-align: left; margin-left: 0; margin-bottom: 30px; }
+	
+	a { 
+		color: #333; font-family: Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Source Han Sans CN",'Roboto',"Heiti SC","Microsoft Yahei",sans-serif; font-size: 14px; 
+		&:hover { text-decoration: underline; }
+	}
+	label { color: #555; font-size: 0.875em; cursor: default; font-family: '微软雅黑','Helvetica Neue',sans-serif,'SimHei'; }
+
+}
+
+/* show */
+#user_show {
+	background: #aaa;
+
+	/* 左侧信息 */
+	.pine-left {
+		width: 25%;
+
+		.topics { 
+			.gravatar { width: 120px; height: 120px; margin: 0 auto 20px; }
+			.setting-link, .topic-link { display: block; height: 30px; line-height: 30px; }
+		}
+
+		.add-oauth {
+			.oauth-item { display: block; height: 30px; line-height: 30px; }			
+		}
+	}
+
+	/* 右侧表单 */
+	.pine-right {
+		width: 70%;
+		
+		.field { 
+			margin-bottom: 20px;
+			label { margin-bottom: 10px; display: block; }
+			input { height: 20px; width: 80%; color: rgba(0,0,0,.7); border: 1px solid rgba(0,0,0,.15); border: 1px solid rgba(0,0,0,.15); padding: .65em 1em; border-radius: .3125em; }
+		}
+
+		.submit { 
+			input { padding: 10px 20px; border: none; border-radius: 3px; background: $base-bg-color; color: $base-item-color; letter-spacing: 2px; font-size: 14px; cursor: pointer; }
+		}
+	}
+
+
+
+	/* 通用样式 */
+	.user-edit-cell { padding: $base-padding; background: #fff; margin-bottom: 20px; }
+	.title { 
+		font-size: 18px; color: rgba(0,0,0,.75); text-align: left; margin-left: 0; margin-bottom: 30px; 
+		.setting { margin-left: 20px; font-weight: normal; }
+	}
+	
+	a { 
+		color: #333; font-family: Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Source Han Sans CN",'Roboto',"Heiti SC","Microsoft Yahei",sans-serif; font-size: 14px; 
+		&:hover { text-decoration: underline; }
+	}
+	label { color: #555; font-size: 0.875em; cursor: default; font-family: '微软雅黑','Helvetica Neue',sans-serif,'SimHei'; }
+
+}

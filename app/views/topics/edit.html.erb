@@ -1,0 +1,29 @@
+<% provide :title, '编辑话题' %>
+
+<div id="topics"><div class="pine-wrap">
+	<!-- 左侧 -->
+	<div class="main pine-left part">
+		<!-- 位置 -->
+		<%= render 'position' %>
+
+		<!-- 发布表单内容 -->
+		<div class="pine-content">
+			<%= render 'form', submitName: '修改' %>
+		</div>
+	</div>
+
+	<!-- 右侧 -->
+	<div id="topics-banner" class="banner pine-right">
+		<!-- 无人回复话题 -->
+		<div class="part">
+			<div class="topics-title"><h2>热门话题</h2></div>
+			<div class="content">
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+			</div>
+		</div>
+	</div>
+</div></div>

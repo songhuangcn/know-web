@@ -1,0 +1,15 @@
+<div class="cell">
+	<div class="pine-left"><a href=""><img class="header" src="/images/topic-pic.png" alt="src"></a></div>
+	<div class="pine-right" id="show_reply_main">
+		<!-- 回复属性 -->
+		<div class="attr">
+			<span class="name"><a href="#">PineWong</a></span>
+			<span class="floor"><%= comment_counter+1 %> 楼</span>
+			<span class="time">• <%= comment.created_at.strftime('%Y-%m-%d') %></span>
+			<span class="delete">• <%= link_to '删除评论', [comment.topic, comment], method: 'delete', data: { confirm: '删除评论后内容清空，但楼层保留，确认?' } %></span>
+		</div>
+		
+		<!-- 回复内容 -->
+		<div class="pine-content"><%= comment.content %></div>
+	</div>
+</div>

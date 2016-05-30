@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-05-24 15:50:25
+ * @version $Id$
+ */
+
+/*#f6f6f6*/
+
+/* 整体 */
+#topics { background: rgb(225, 225, 225); }
+	#topics .main { width: 74%; border-radius: 3px;  }
+	#topics .banner { width: 24%; }
+
+/* 左侧 */
+#topics .main .topics-title .title-a {  color: #f8504b; font-size: 14px; margin-right: 20px; }
+#topics .main .topics-title a.selected { background-color: #f8504b; color: #fff; border-radius: 3px; font-size: 14px; margin-right: 20px; padding: 3px 4px; }
+
+#topics_content>.cell { height: 30px; line-height: 30px; border-top: solid 1px #f0f0f0; padding: 10px 10px; }
+#topics_content .pic { width: 30px; height: 30px; }
+#topics_content .count { color: #b4b4b4; font-size: 10px; margin-left: 10px; }
+#topics_content .label { background: #e5e5e5; color: #999; padding: 3px 4px; font-size: 12px; margin-left: 10px; line-height: 12px; margin-top: 7px; border-radius: 3px; }
+#topics_content .title { font-size: 16px; margin-left: 10px; }
+	#topics_content .title a { color: #333; }
+#topics_content .reply { width: 20px; height: 20px; margin-top: 0; margin-right: 10px; }
+#topics_content .replypic { width: 20px; height: 20px; margin-top: 5px; }
+#topics_content .time { color: #778087; font-size: 11px; }
+#topics_content .blank { height: 30px; }
+
+
+/* 右侧 */
+#topics .part { margin-bottom: 14px; background: #fff; color: #77807B; font-size: 14px; }
+	#topics .part .content { padding: 10px 18px 20px; }
+	#topics .part .cell { margin-top: 20px; }
+	#topics .part .cell a {  color: #77807B; }
+	#topics-banner-content .score { width: 40px; display: inline-block; }
+	#topics-banner-content .user { width: 60px; margin-left: 30px; }
+
+/* 样式 */
+.topics-title { height: 40px; line-height: 40px; background: #f6f6f6; padding: 0 20px; }
+.topics-part { background: #fff; margin-top: 20px; }
+
+
+
+
+
+
+/* show.html.erb */
+#topics_show_main .title { background: #fff; border: solid 1px #e5e5e5; padding: 20px; text-align: left; }
+	#topics_show_main .title .title-name { font-size: 22px; color: #333; font-weight: bold; }
+	#topics_show_main .title .title-attr { font-size: 12px; color: #838383; margin-top: 20px; padding-bottom: 5px; }
+#topics_show_main .content { background: #fff; border-top: solid 1px #e5e5e5; }
+	#topics_show_reply { margin-top: 20px; }
+	#topics_show_reply .topics-title { font-size: 14px; color: #444; }
+	#topics_show_reply .cell {  border-top: solid 1px #e5e5e5; padding: 10px; }
+	#topics_show_reply .pine-left { width: 4%; }
+		#topics_show_reply .pine-left .header { width: 30px; height: 30px; }
+
+	#topics_show_reply .pine-right { width: 96%; }
+		#topics_show_reply .attr { padding: 5px; }
+		#topics_show_reply .pine-content .name { width: 30px; height: 30px; }
+		#topics_show_reply .pine-content .floor { width: 30px; height: 30px; }
+		#topics_show_reply .pine-content .time { width: 30px; height: 30px; }
+
+/* 右侧作者 */
+#topics-author { padding: 20px; }
+	#topics-author .header { widows: 40px;height: 40px; vertical-align: middle; }
+	#topics-author .name { font-size: 16px; color: #778077; margin-left: 10px; }
+	#topics-author .score { margin-top: 20px; color: #333; }
+	#topics-author .sign { margin-top: 20px; color: #333; font-style: italic; }
+
+
+
+
+
+/* new.html.erb */
+#topics-new-form { text-indent: 0; }
+#topics_category { height: 30px; line-height: 30px; width: 300px; border-radius: 3px; }
+/*#topics-new-form .category select { width: 200px; height: 30px; line-height: 30px; }*/
+#topics-new-form .title { margin-top: 20px; text-align: left; width: 760px; padding: 0 5px; height: 30px; border: solid 1px #e5e5e5; }
+#topics-new-form .area-content { margin-top: 20px; width: 760px; padding: 5px; height: 500px; border: solid 1px #e5e5e5;  }
+#topics-new-form .submit { padding: 10px 20px; background: #f8504b; cursor: pointer; color: #fff; border-radius: 3px; border: none; }
+
+#topics .topics-title .titlename { padding: 0; color: #f8504b; font-size: 14px; }
+
+
+/* banner */
+#topics_pubbanner { }
+	#topics_pubbanner .pub { display: inline-block; border-radius: 3px; padding: 10px 10px; letter-spacing: 2px; background: #f8504b; color: #fff; }
+	#topics_pubbanner>.tip { margin-top: 15px; font-size: 13px; color: gray; }
+
+
+/* show.html.erb */
+#topics_reply_new .topics-title { font-size: 14px; color: #444; }
+#topics_reply_form { text-indent: 0; }
+#topics_reply_form .area-content {  width: 760px; padding: 5px; height: 200px; border: solid 1px #e5e5e5;  }
+#topics_reply_form .submit { cursor: pointer; background: #f8504b; padding: 10px 20px; border-radius: 3px; color: #fff; border: none; }
+
+
+
+
+
+
+

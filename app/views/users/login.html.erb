@@ -1,0 +1,41 @@
+<div id="login" class="oauth">
+  <h1 class="oauth-title">用户登陆</h1>
+
+  <div class="quick">
+    <span>快捷登录</span>
+    <span id="login-quick-pic">
+      <a onclick="alertMessage('接口申请中...')" href="#"><img src="/images/login-qq-1.png" id="login-qq" alt=""></a>
+      <a onclick="alertMessage('接口申请中...')" href="#"><img src="/images/login-weichat-1.png" id="login-weichat" alt=""></a>
+      <a onclick="alertMessage('接口申请中...')" href="#"><img src="/images/login-github-1.png" id="login-github" alt=""></a>
+    </span>
+  </div>
+
+  <!-- 登陆表单 -->
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="oauth-field">
+      <!--  <%= f.label :email %><br /> -->
+      <%= f.email_field :email, autofocus: true, placeholder: '请输入登录邮箱' %>
+    </div>
+
+    <div class="oauth-field">
+      <!-- <%= f.label :password %><br /> -->      
+      <%= f.password_field :password, autocomplete: "off", placeholder: '请输入账户密码（6-12位，区分大小写，不能用空格）' %>
+    </div>
+
+    <div class="tips">
+      <% if devise_mapping.rememberable? -%>
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, '记住我' %>
+      <% end -%>
+
+      <%= link_to "忘记密码?", new_password_path(resource_name), class: 'forget oauth-link-a' %>
+    </div>
+
+    <div class="oauth-actions">
+      <%= f.submit "登录" %>
+    </div>
+  <% end %>
+
+  <p class="oauth-link"><%= link_to "还没有账户，马上注册", new_registration_path(resource_name) %></p> 
+</div>
+

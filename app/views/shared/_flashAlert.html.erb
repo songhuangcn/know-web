@@ -1,0 +1,5 @@
+<% if !flash["alert"].blank? %>
+<script>
+	alert('<%= flash[:alert] %>');
+</script>
+<% end %>

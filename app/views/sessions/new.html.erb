@@ -1,0 +1,39 @@
+<div id="login" class="oauth">
+  <h1 class="oauth-title">用户登陆</h1>
+
+  <div class="quick">
+    <span>快捷登录</span>
+    <span id="login-quick-pic">
+      <a onclick="alert('接口申请中...')" href="#"><img src="/images/login-qq-1.png" id="login-qq" alt=""></a>
+      <a onclick="alert('接口申请中...')" href="#"><img src="/images/login-weichat-1.png" id="login-weichat" alt=""></a>
+      <a onclick="alert('接口申请中...')" href="#"><img src="/images/login-github-1.png" id="login-github" alt=""></a>
+    </span>
+  </div>
+
+  <!-- 登陆表单 -->
+  <%= form_for(:session, url: login_path) do |f| %>
+    <div class="oauth-field">
+      <!--  <%= f.label :username %><br /> -->
+      <%= f.text_field :username, autofocus: true, placeholder: '请输入登录账户' %>
+    </div>
+
+    <div class="oauth-field">
+      <!-- <%= f.label :password %><br /> -->      
+      <%= f.password_field :password, autocomplete: "off", placeholder: '请输入账户密码' %>
+    </div>
+
+    <div class="tips">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, '记住我' %>
+
+      <%= link_to "忘记密码?", root_path, class: 'forget oauth-link-a' %>
+    </div>
+
+    <div class="oauth-actions">
+      <%= f.submit "登录" %>
+    </div>
+  <% end %>
+
+  <p class="oauth-link"><%= link_to "还没有账户，马上注册", signup_path %></p> 
+</div>
+

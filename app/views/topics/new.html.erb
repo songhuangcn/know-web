@@ -1,0 +1,52 @@
+<% content_for :title, 'Web学习网 - 为你的Web开发技能加分' %>
+
+<% content_for :styles do %>
+	<link href="/styles/libs/reset.css" rel="stylesheet" />
+	<link href="/styles/base.css" rel="stylesheet" />
+	<link href="/styles/topics.css" rel="stylesheet" />
+<% end %>
+
+<% content_for :scripts do %>
+	<script type="text/javascript" src="/scripts/libs/jquery-2.2.2.min.js"></script>
+	<script type="text/javascript" src="/scripts/base.js"></script>
+	<script type="text/javascript" src="/scripts/topics.js"></script>
+<% end %>
+
+<div id="topics"><div class="pine-wrap">
+	<!-- 左侧 -->
+	<div class="main pine-left part">
+		<!-- 位置 -->
+		<%= render 'position' %>
+
+		<!-- 发布表单内容 -->
+		<div class="pine-content">
+			<%= render 'form', submitName: '发布' %>
+		</div>
+	</div>
+
+	<!-- 右侧 -->
+	<div id="topics-banner" class="banner pine-right">
+		<!-- 无人回复话题 -->
+		<div class="part">
+			<div class="topics-title"><h2>热门话题</h2></div>
+			<div class="content">
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+			</div>
+		</div>
+	</div>
+</div></div>
+
+<% if @topic.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+	<ul>
+		<% @topic.errors.full_messages.each do |msg| %>
+	  	<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>

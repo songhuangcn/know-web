@@ -1,0 +1,56 @@
+# encoding: utf-8  
+cn:
+  errors:
+    messages:
+      expired: "已经过期,请重新获取"
+      not_found: "不存在"
+      already_confirmed: "已经通过验证,请直接登录"
+      not_locked: "没有锁定"
+      not_saved:
+        one: "发生了一个错误在%{resource} 保存的时候:"
+        other: "%{count}个错误禁止了%{resource}的保存:"
+ 
+  devise:
+    failure:
+      already_authenticated: '您已经登录.'
+      unauthenticated: '您在进行下一步操作之前必须登录或者注册.'
+      unconfirmed: '您在进行下一步操作之前必须验证您的邮箱.'
+      locked: '您的账号已经被锁定.'
+      invalid: '邮件或者密码错误.'
+      invalid_token: 'authentication token 非法.'
+      timeout: '您的登录时间已经过期,在下一步操作之前请重新登录.'
+      inactive: '您的账号还没有被激活.'
+    sessions:
+      signed_in: '登录成功.'
+      signed_out: '注销成功.'
+    passwords:
+      send_instructions: '您将会在几分钟内收到一封关于如何重置密码的邮件.'
+      updated: '您的密码已经重置成功,您现在已经登录.'
+      updated_not_active: '您的密码已经成功更换.'
+      send_paranoid_instructions: "如果您的邮箱存在我们服务器的数据库中,您将受到一封恢复密码的邮件在您的注册邮箱中."
+    confirmations:
+      send_instructions: '您将在几分钟内收到一封邮件关于如何验证您的注册邮箱.'
+      send_paranoid_instructions: '如果您的邮箱存在我们服务器的数据库中,您将受到一封如何验证账户的邮件在您的注册邮箱中.'
+      confirmed: '您的账户已经成功验证,您已经登录了网站.'
+    registrations:
+      signed_up: '欢迎您!您已经成功注册.'
+      signed_up_but_unconfirmed: '一个含有验证信息的链接已经发送到了您的邮箱地址,请打开此邮件来激活您的账户.'
+      signed_up_but_inactive: '您已经成功注册,但是由于您的邮箱还没有得到验证,所以暂时还不能让您登录.'
+      signed_up_but_locked: '您已经成功注册. 但是由于您的账户已经被锁定,所以暂时不能让您登录.'
+      updated: '您已经成功更新了您的账户信息.'
+      update_needs_confirmation: "您已经成功更新了您的账户信息, 但是我们没有验证您的新的邮件地址. 请登录您的邮箱并点击验证的链接来完成此次邮箱地址的修改."
+      destroyed: '再见!您的账户已经成功消除,希望能很快再次见到您.'
+    unlocks:
+      send_instructions: '您的注册邮箱地址将在几分钟内收到一封邮件关于如何解除账户锁定.'
+      unlocked: '您的账户已经成功解除锁定.请登录以继续下一步操作.'
+      send_paranoid_instructions: '如果您的账户存在,您的邮箱在几分钟内将收到一份邮件关于如何解除账户锁定.'
+    omniauth_callbacks:
+      success: '成功完成从 %{kind} 的账户认证.'
+      failure: '不能完成从 %{kind} 的认证,因为 "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: '请激活您的邮箱'
+      reset_password_instructions:
+        subject: '重新设定您的密码'
+      unlock_instructions:
+        subject: '解除账户锁定'

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-05-28 10:40:33
+ * @version $Id$
+ */
+
+$base-color: #f8504b;
+$base-padding: 20px;
+
+.pine-container { margin: auto; width: 1110px; padding: 20px 0; }
+.pine-padding { padding: $base-padding; }
+
+img { display: block; }
+
+/* 闪现消息 */
+#flash { 
+	background: rgb(226,238,217); 
+	.item { height: 30px; line-height: 30px; }
+	.success { color: rgb(132,157,128); }
+	.danger { color: $base-color; }
+	.info { color: blue; }
+	.warning { color: orange; }
+}
+
+/* debug */
+.debug_dump { font-size: 16px; width: 60%; margin: 0 auto; }

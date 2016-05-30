@@ -1,0 +1,106 @@
+<% content_for :title, 'Web学习网 - 为你的Web开发技能加分' %>
+
+<% content_for :styles do %>
+	<link href="/styles/libs/reset.css" rel="stylesheet" />
+	<link href="/styles/base.css" rel="stylesheet" />
+	<link href="/styles/topics.css" rel="stylesheet" />
+<% end %>
+
+<% content_for :scripts do %>
+	<script type="text/javascript" src="/scripts/libs/jquery-2.2.2.min.js"></script>
+	<script type="text/javascript" src="/scripts/base.js"></script>
+	<script type="text/javascript" src="/scripts/topics.js"></script>
+<% end %>
+
+<div id="topics"><div class="pine-wrap">
+	<!-- 左侧 -->
+	<div class="main pine-left">
+		<!-- 话题内容 -->
+		<div id="topics_show_main" class="topics-part">
+			<!-- 位置 -->
+			<%= render 'position' %>
+		
+			<div class="title">
+				<div><h1 class="title-name"><%= @topic.title %></h1></div>
+				<div class="title-attr">
+					<span class="atime">• 发布于 <%= @topic.created_at.strftime('%Y-%m-%d') %></span>
+					<span class="author">• 作者 PineWong</span>
+					<span class="count">• 83 次浏览</span>
+					<span class="rtime">• 最后编辑时间 <%= @topic.updated_at.strftime('%Y-%m-%d') %></span>
+					<span class="category">• 来自 <%= @topic.category %></span>
+					<span class="edit">• <a href="<%= edit_topic_path %>">编辑文章</a></span>
+				</div>
+			</div>
+			<div class="pine-content">
+				<p><%= @topic.content %></p>
+			</div>
+			<!-- <div class="title">
+				<div><h1 class="title-name">Mac OS X 中 brew 搭建 Ruby Rails 环境</h1></div>
+				<div class="title-attr">
+					<span class="atime">• 发布于 2016/06/01</span>
+					<span class="author">• 作者 PineWong</span>
+					<span class="count">• 83 次浏览</span>
+					<span class="rtime">• 最后编辑时间 2016/06/01</span>
+				</div>
+			</div>
+			<div class="pine-content">
+				<p>该步骤重点是用vagrant工具初始化一个适合rails的工作环境（虚拟机），命令中选用的是Ubuntu 14.04系统。如你有其他需求，可以在vagrant 的 box 搜寻仓库 https://atlas.hashicorp.com/boxes/search 中查找，但注意一定要是适合rails的，因为这样之后安装环境能减少很多依赖问题。vagrant命令使用问题，请参照官方文档 https://www.vagrantup.com/docs/</p>
+				<p>以上是建立好了一个适合rails的虚拟机，这个环境以后进行修改后可以重新打包分发给你的同事朋友，这样你们就拥有两份完全一致的系统。下面介绍在新建的ubuntu虚拟机环境中搭建出一个能够运行的rails环境，并使这个服务器跑起来。</p>
+			</div> -->
+		</div>
+
+		<!-- 话题回复 -->
+		<div id="topics_show_reply" class="topics-part">
+			<!-- 回复数 -->
+			<div class="topics-title"><span>14 回复</span></div>
+
+			<!-- 回复 -->
+			<%= render @topic.comments %>
+		</div>
+
+		<!-- 添加回复 -->
+		<div class="topics-part" id="topics_reply_new">
+			<!-- 标题 -->
+			<div class="topics-title">添加回复</div>
+
+			<!-- 回复表单 -->
+			<%= render 'comments/form' %>
+		</div>
+	</div>
+
+	<!-- 右侧 -->
+	<div id="topics-banner" class="banner pine-right">
+		<!-- 作者信息 -->
+		<div class="part">
+			<%= render 'author' %>
+		</div>
+
+		<!-- 作者话题 -->
+		<div class="part">
+			<div class="topics-title"><h2>作者其他话题</h2></div>
+			<div class="content">
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
+			</div>
+		</div>
+
+		<!-- 无人回复话题 -->
+		<div class="part">
+			<%= render 'noreply' %>
+		</div>
+	</div>
+</div></div>
+
+<% if @topic.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+	<ul>
+		<% @topic.errors.full_messages.each do |msg| %>
+	  	<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>

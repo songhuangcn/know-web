@@ -1,0 +1,73 @@
+<% provide :title, '话题讨论' %>
+
+<div id="topics"><div class="pine-wrap">
+	<!-- 左侧 -->
+	<div class="main pine-left topics-part">
+		<!-- 栏目 -->
+		<div class="topics-title">
+			<a class="title-a selected" href="">最新</a>
+			<a class="title-a" href="">精华</a>
+			<a class="title-a" href="">问答</a>
+			<a class="title-a" href="">分享</a>
+			<a class="title-a" href="">瞎扯淡</a>
+		</div>
+
+		<!-- 话题内容 -->
+		<div id="topics_content">
+			<% @topics.each do |topic| %>
+			<div class="cell">
+				<!-- 头像 -->
+				<span class="pine-left">
+					<a href=""><%= image_tag 'topic-pic', class: 'pic' %></a>
+				</span>
+				<!-- 统计 -->
+				<span class="count pine-left">12/122</span>
+				<!-- 精华 -->
+				<span class="label pine-left selected"><%= topic.category %></span>
+				<!-- 标题 -->
+				<span class="pine-left title"><a href="<%= topic_path(topic) %>"><%= topic.title %></a></span>
+				<!-- 时间 -->
+				<span class="pine-right time"><%= topic.created_at.strftime('%Y-%m-%d') %></span>
+				<!-- 回复 -->
+				<span class="pine-right reply">
+					<a href="">
+						<img src="/images/topic-pic.png" alt="repic" class="replypic" />
+					</a>
+				</span>
+			</div>
+			<% end %>
+
+			<div class="blank"></div>
+		</div>
+	</div>
+
+	<!-- 右侧 -->
+	<div id="topics-banner" class="banner pine-right">
+		<!-- 作者 -->
+		<div class="part">
+			<%= render 'author' %>
+		</div>
+
+
+		<!-- 发布话题 -->
+		<div class="part">
+			<%= render 'pubbanner' %>
+		</div>
+
+
+		<!-- 热门话题 -->
+		<div class="part">
+			<%= render 'hot' %>
+		</div>
+
+		<!-- 用户积分排行 -->
+		<div class="part">
+			<%= render 'score' %>
+		</div>
+
+		<!-- 精华 -->
+		<div class="part">
+			<%= render 'essence' %>
+		</div>
+	</div>
+</div></div>
