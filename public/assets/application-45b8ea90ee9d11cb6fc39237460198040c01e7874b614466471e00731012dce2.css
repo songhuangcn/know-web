@@ -264,7 +264,7 @@ body, button, input, select, textarea { font: 'Open Sans', Tahoma, Helvetica, Ar
 		#downloads_content .content li .right .download-icon { cursor: pointer; display: block; width: 50px; height: 50px; float: left; margin-right: 30px; }
 
 
-		#downloads_content .content li .left img { vertical-align: middle; margin-top: 40px; width: 120px; height: 120px; }
+		#downloads_content .content li .left img { vertical-align: middle; margin: 40px 0 0 40px; width: 120px; height: 120px; }
 
 		#downloads_content .content li .left:hover { background: rgb(52, 179, 160); }
 		#downloads_content .content li .right:hover { background: rgb(52, 179, 160); }

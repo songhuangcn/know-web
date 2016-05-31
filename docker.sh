@@ -22,7 +22,7 @@ bundle install;
 
 
 echo '/*** Rake Asset:';
-# rake assets:precompile;
+rake assets:precompile;
 
 echo '/*** Rake Db:';
 # rake db:drop;
