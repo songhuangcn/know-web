@@ -13,6 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require base
-//= require_tree .
 //= require_self

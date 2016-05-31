@@ -1,9 +1,20 @@
 <div class="pine-content">
 	<%= form_for [@topic, @topic.comments.build], html: { id: 'topics_reply_form' } do |f| %>
 		<!-- 内容 -->
+		<!-- 未登录 -->
+		<% if !logged_in? %>
 		<div>
-	    <%= f.text_area :content, class: 'area-content', placeholder: '内容（10字以上，200字以内）' %>
+	    <%= f.text_area :content, class: 'area-content', placeholder: '你还未登陆，评论话题前请先登陆！' %>
 		</div>
+
+		<!-- 登陆后 -->
+		<% else %>
+		<div>
+	    <%= f.text_area :content, class: 'area-content', placeholder: '内容（6字以上，200字以内）' %>
+		</div>
+		<!-- 用户id -->
+	    <%= f.hidden_field :user_id, value: current_user.id %>
+		<% end %>
 
 		<!-- 提交 -->
 		<div>

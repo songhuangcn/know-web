@@ -1,25 +1,29 @@
 <div class="cell">
 	<!-- 头像 -->
-	<span class="pine-left pic">
+	<span class="pine-left pic item">
 		<%= gravatar_for topic.user %>
 	</span>
 	<!-- 统计 -->
-	<span class="count pine-left">12/122</span>
-	<!-- 精华 -->
-	<span class="label pine-left selected"><%= topic.category.nil? ? '瞎扯淡' : topic.category %></span>
-	<!-- 标题 -->
-	<span class="pine-left title"><%= link_to topic.title, topic_path(topic) %></span>
-	<!-- 时间 -->
-	<span class="pine-right time"><%= topic.created_at.strftime('%Y-%m-%d') %></span>
-	<!-- 回复 -->
-	<span class="pine-right reply replypic">
-		<a href="">
-			<%= gravatar_for topic.user %>
-		</a>
+	<span class="count pine-left item"><%= topic.reply_count %> / <%= topic.view_count %></span>
+
+	<span class="pine-left labelspan item">
+		<% if essence?(topic) %>
+		<!-- 是否精华 -->
+		<span class="pine-left essence label">精华</span>
+		<% end %>
+
+		<!-- 类别 -->
+		<span class="label pine-left category"><%= topic.category %></span>
 	</span>
 
-	<% if current_user == topic.user %>
-	<!-- 删除链接 -->
-	<span class="pine-right delete"><%= link_to '删除文章', topic_path(topic), method: :delete %> </span>
-	<% end %>
+	<!-- 标题 -->
+	<span class="pine-left title item"><%= link_to topic.title, topic_path(topic) %></span>
+	<!-- 时间 -->
+	<span class="pine-right time item"><%= topic.created_at.strftime('%Y-%m-%d') %></span>
+	<!-- 回复 -->
+	<span class="pine-right reply replypic item">
+		<a href="">
+			<%= gravatar_for topic.comments.last.nil? ? nil : topic.comments.last.user %>
+		</a>
+	</span>
 </div>

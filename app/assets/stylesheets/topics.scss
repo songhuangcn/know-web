@@ -11,6 +11,7 @@
 $base-color: #f8504b;
 
 #topics_content {
+	a { color: #333; }
 	.pagination {
 		margin-bottom: 20px;
 		&>* { display: inline-block; border: solid 1px #ddd; float: left; color: #778087; padding: 8px 12px; }
@@ -30,30 +31,54 @@ $base-color: #f8504b;
 
 #topics_content {
 	&>.cell { height: 30px; line-height: 30px; border-top: solid 1px #f0f0f0; padding: 10px 10px; }
-	.pic img { width: 30px; height: 30px; }
-	.count { color: #b4b4b4; font-size: 10px; margin-left: 10px; }
-	.label { background: #e5e5e5; color: #999; padding: 3px 4px; font-size: 12px; margin-left: 10px; line-height: 12px; margin-top: 7px; border-radius: 3px; }
+	.pic {
+		width: 40px;
+		img { width: 30px; height: 30px; }
+	}
+	.count { width: 40px; color: #b4b4b4; font-size: 10px; }
+
+	.labelspan {
+		 width: 90px;
+		.label { margin-top: 5px; margin-right: 5px; padding: 3px 4px; font-size: 12px; line-height: normal; border-radius: 3px; }
+		.essence { background: #f8504b; color: #fff; } 
+		.category {  background: #e5e5e5; color: #999; }
+	}
+
 	.title { 
-		font-size: 16px; margin-left: 10px;
+		font-size: 16px;
 		a { color: #333; }
 	}
 	.reply { 
-		width: 20px; height: 20px; margin-top: 0; margin-right: 10px; 
+		width: 30px; height: 20px; margin-top: 0; 
 		img { width: 20px; height: 20px; margin-top: 5px; }
 	}
-	.time { color: #778087; font-size: 11px; }
+	.time { width: 70px; color: #778087; font-size: 11px; }
+	.delete { width: 60px; color: #77807B }
 	.blank { height: 30px; }
-	.delete { margin-right: 10px; color: #77807B }
+
 }
 
 
 /* 右侧 */
-#topics .part { margin-bottom: 14px; background: #fff; color: #77807B; font-size: 14px; }
-	#topics .part .content { padding: 10px 18px 20px; }
-	#topics .part .cell { margin-top: 20px; }
-	#topics .part .cell a {  color: #77807B; }
-	#topics-banner-content .score { width: 40px; display: inline-block; }
-	#topics-banner-content .user { width: 60px; margin-left: 30px; }
+#topics .part { 
+	margin-bottom: 14px; background: #fff; color: #77807B; font-size: 14px; 
+	.content { padding: 10px 18px 20px; }
+}
+
+#topics-banner {
+	.cell { margin-top: 10px; }
+	.cell a {  color: #77807B; }
+	
+	.name a { color: #333; }
+
+	/* 积分 */
+	.user-score .cell {  
+		.score { width: 60px; display: inline-block; }
+		.user { width: 130px; display: inline-block; }
+	}
+}
+
+
 
 /* 样式 */
 .topics-title { height: 40px; line-height: 40px; background: #f6f6f6; padding: 0 20px; }
@@ -65,21 +90,37 @@ $base-color: #f8504b;
 
 
 /* show.html.erb */
-#topics_show_main .title { background: #fff; border: solid 1px #e5e5e5; padding: 20px; text-align: left; }
-	#topics_show_main .title .title-name { font-size: 22px; color: #333; font-weight: bold; }
-	#topics_show_main .title .title-attr { font-size: 12px; color: #838383; margin-top: 20px; padding-bottom: 5px; }
-#topics_show_main .content { background: #fff; border-top: solid 1px #e5e5e5; }
-	#topics_show_reply { margin-top: 20px; }
-	#topics_show_reply .topics-title { font-size: 14px; color: #444; }
-	#topics_show_reply .cell {  border-top: solid 1px #e5e5e5; padding: 10px; }
-	#topics_show_reply .pine-left { width: 4%; }
-		#topics_show_reply .pine-left .header { width: 30px; height: 30px; }
+#topics_show_main {
+	.title { 
+		background: #fff; border: solid 1px #e5e5e5; padding: 20px; text-align: left; 
+		.title-name { font-size: 22px; color: #333; font-weight: bold; }
+		.title-attr { font-size: 12px; color: #838383; margin-top: 20px; padding-bottom: 5px; }
+	}
+	.content { background: #fff; border-top: solid 1px #e5e5e5; }
 
-	#topics_show_reply .pine-right { width: 96%; }
-		#topics_show_reply .attr { padding: 5px; }
-		#topics_show_reply .pine-content .name { width: 30px; height: 30px; }
-		#topics_show_reply .pine-content .floor { width: 30px; height: 30px; }
-		#topics_show_reply .pine-content .time { width: 30px; height: 30px; }
+	.topic-attr { 
+		margin: 20px;
+		a {color: #333;}
+		.item { margin-right: 10px; }
+	}
+
+}
+
+/* 回复 */
+#topics_show_reply { 
+	margin-top: 20px; 
+	.topics-title { font-size: 14px; color: #444; }
+	.cell {  border-top: solid 1px #e5e5e5; padding: 10px; }
+	.pine-left { width: 4%; }
+	.header img { width: 30px; height: 30px; }
+
+	.pine-right { width: 96%; }
+	.attr { 
+		padding: 5px; 
+		a { color: #333; }
+	}
+}
+
 
 /* 右侧作者 */
 #topics-author { 

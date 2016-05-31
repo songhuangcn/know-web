@@ -1,15 +1,20 @@
 <div class="cell">
-	<div class="pine-left"><a href=""><%= image_tag 'topic-pic.png', alt: 'src', class: 'header' %></a></div>
+	<div class="pine-left header"><%= gravatar_for comment.user %></div>
 	<div class="pine-right" id="show_reply_main">
 		<!-- 回复属性 -->
 		<div class="attr">
-			<span class="name"><a href="#">PineWong</a></span>
+			<span class="name"><%= link_to comment.user.username, user_path(comment.user) %></a></span>
 			<span class="floor"><%= comment_counter+1 %> 楼</span>
 			<span class="time">• <%= comment.created_at.strftime('%Y-%m-%d') %></span>
+
+			<% if current_user?(comment.user) %>
 			<span class="delete">• <%= link_to '删除评论', [comment.topic, comment], method: 'delete', data: { confirm: '删除评论后内容清空，但楼层保留，确认?' } %></span>
+			<% end %>
 		</div>
 		
 		<!-- 回复内容 -->
-		<div class="pine-content"><%= comment.content %></div>
+		<div class="pine-content">
+		<%= comment.deleted? ? '楼层已被删除！' : comment.content %>
+		</div>
 	</div>
 </div>

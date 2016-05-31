@@ -3,11 +3,11 @@ require 'test_helper'
 class TopicTest < ActiveSupport::TestCase
 	def setup
 		@user = users(:pinewong)
-	    # 这行代码不符合常见做法
-	    @topic = @user.topics.build(title: 'aaaaaaaaa', content: "Topic Content", user_id: @user.id)
+	    @topic = @user.topics.build(title: 'aaaaaaaaa', content: "Topic Content")
 	end
 
 	test "should be valid" do
+		assert @user.valid?
 		assert @topic.valid?
 	end
 
@@ -39,7 +39,7 @@ class TopicTest < ActiveSupport::TestCase
 	test "associated topic should be destroyed" do
 		@user.save
 		@topic.save
-		assert_difference 'Topic.count', -1 do
+		assert_difference 'Topic.count' do
 			@user.destroy
 		end
 	end

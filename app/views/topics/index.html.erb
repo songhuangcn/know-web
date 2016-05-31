@@ -5,11 +5,11 @@
 	<div class="main pine-left topics-part" style="margin-top: 0">
 		<!-- 栏目 -->
 		<div class="topics-title">
-			<a class="title-a selected" href="">最新</a>
-			<a class="title-a" href="">精华</a>
-			<a class="title-a" href="">问答</a>
-			<a class="title-a" href="">分享</a>
-			<a class="title-a" href="">瞎扯淡</a>
+			<%= link_to '最新', topics_path, class: selected_by_action('index', 'title-a') %>
+			<%= link_to '精华', essence_topic_path, class: selected_by_action('essence', 'title-a') %>
+			<%= link_to '问答', ask_topic_path, class: selected_by_action('ask', 'title-a') %>
+			<%= link_to '分享', share_topic_path, class: selected_by_action('share', 'title-a') %>
+			<%= link_to '瞎扯淡', other_topic_path, class: selected_by_action('other', 'title-a') %>
 		</div>
 
 		<!-- 话题内容 -->
@@ -37,9 +37,21 @@
 	<!-- 右侧 -->
 	<div id="topics-banner" class="banner pine-right">
 
+		<% if logged_in? %>
+		<!-- 用户信息 -->
+		<div class="part">
+			<%= render 'user' %>
+		</div>
+		<% end %>
+
 		<!-- 发布话题 -->
 		<div class="part">
 			<%= render 'pubbanner' %>
+		</div>
+
+		<!-- 用户积分排行 -->
+		<div class="part">
+			<%= render 'score' %>
 		</div>
 
 
@@ -48,14 +60,5 @@
 			<%= render 'hot' %>
 		</div>
 
-		<!-- 用户积分排行 -->
-		<div class="part">
-			<%= render 'score' %>
-		</div>
-
-		<!-- 精华 -->
-		<div class="part">
-			<%= render 'essence' %>
-		</div>
 	</div>
 </div></div>
