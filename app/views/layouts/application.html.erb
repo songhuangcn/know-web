@@ -18,9 +18,9 @@
 	<%= render '/shared/nav' %>
 	<%= render '/shared/flash' %>
 	<%= yield %>
+	<%= render '/shared/link' %>
 	<%= render '/shared/copyright' %>
 	<%= render '/shared/debug' %>
-	<%= render '/shared/flashAlert' %>
 	
 	<%= javascript_include_tag 'base', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag params[:controller], 'data-turbolinks-track' => true %>
