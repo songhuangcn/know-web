@@ -8,7 +8,7 @@
 $(function() {
 	// 轮播
 	var interval;
-	slide(interval, 1000);
+	slide(interval, 5000);
 
 	// 项目演示动画
 	changeDemo();

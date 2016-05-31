@@ -10,6 +10,18 @@ class TopicsController < ApplicationController
 		get_banner_data
 	end
 
+	# 用户发布
+	def user_pub
+		@topics = User.find(params[:id]).topics.order(created_at: :desc).paginate(page: params[:page])
+		render 'topics/index'
+	end
+
+	# 用户回复
+	def user_reply
+		@topics = Topic.find_by_sql("select * from topics t where user_id=#{params[:id]} or exists (select * from comments where user_id=#{params[:id]} and topic_id=t.id) order by created_at desc limit 10")
+		render 'topics/index'
+	end
+
 	# 精华栏目
 	def essence
 		@topics = get_essence

@@ -68,6 +68,7 @@
 
 	<!-- 右侧 -->
 	<div id="topics-banner" class="banner pine-right">
+
 		<!-- 作者信息 -->
 		<div class="part">
 			<%= render 'author' %>
@@ -76,16 +77,20 @@
 		<!-- 作者话题 -->
 		<%= render 'authorTopics' %>
 
+		<% if !@topics_author.nil? %>
 		<!-- 无人回复话题 -->
 		<div class="part">
 			<%= render 'noreply' %>
 		</div>
+		<% end %>
 
 		<!-- 精华 -->
+		<% if !@topics_essence.nil? %>
 		<div class="part">
 			<%= render 'essence' %>
 		</div>
-		
+		<% end %>
+
 	</div>
 </div></div>
 
