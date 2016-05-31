@@ -6,21 +6,21 @@
       <div class="header"><%= gravatar_for @user %></div> 
       <!-- 当前信息用户登录 -->
       <% if (logged_in? && current_user?(@user)) %>
-      <p><%= link_to '我发布的话题', root_path, class: 'topic-link' %></p>
-      <p><%= link_to '我参与的话题', root_path, class: 'topic-link' %></p>
+      <p><%= link_to '我发布的话题', user_pub_topic_path, class: 'topic-link' %></p>
+      <p><%= link_to '我参与的话题', user_reply_topic_path, class: 'topic-link' %></p>
       
       <!-- 非当前信息用户 -->
       <% else %>
-      <p><%= link_to 'Ta发布的话题', root_path, class: 'topic-link' %></p>
-      <p><%= link_to 'Ta参与的话题', root_path, class: 'topic-link' %></p>
+      <p><%= link_to 'Ta发布的话题', user_pub_topic_path, class: 'topic-link' %></p>
+      <p><%= link_to 'Ta参与的话题', user_reply_topic_path, class: 'topic-link' %></p>
       <% end %>
     </div>
 
     <!-- 第三方账号 -->
     <div class="add-oauth user-edit-cell">
       <h2 class="title">用户关联账号</h2>
-      <p class="oauth-item">GitHub：<%= link_to '@GitHub', root_path %></p>
-      <p class="oauth-item">微信：<%= link_to '@WeiChat', root_path %></p>
+      <p class="oauth-item">GitHub：<a style="cursor: default">@GitHub</a></p>
+      <p class="oauth-item">微信：<a style="cursor: default">@WeiChat</a></p>
     </div>
   </div>
 

@@ -18,7 +18,9 @@
 
 			<!-- 局部视图展示话题 -->
 			<%= render @topics %>
+			<% if params[:action] != 'user_reply' %>
 			<%= will_paginate %>
+			<% end %>
 
 			<!-- 自定义页码
 			<div id="pagination">
@@ -49,16 +51,18 @@
 			<%= render 'pubbanner' %>
 		</div>
 
+		<% if !@users_score.nil? %>
 		<!-- 用户积分排行 -->
 		<div class="part">
 			<%= render 'score' %>
 		</div>
+		<% end %>
 
-
+		<% if !@topics_hot.nil? %>
 		<!-- 热门话题 -->
 		<div class="part">
 			<%= render 'hot' %>
 		</div>
-
+		<% end %>
 	</div>
 </div></div>
