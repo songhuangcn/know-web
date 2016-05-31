@@ -1,0 +1,1269 @@
+
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-03-26 09:09:48
+ * @version $Id$
+ */
+
+ 
+/*
+KISSY CSS Reset
+理念：清除和重置是紧密不可分的
+特色：1.适应中文 2.基于最新主流浏览器
+维护：玉伯(lifesinger@gmail.com), 正淳(ragecarrier@gmail.com)
+*/
+
+/* 清除内外边距 */
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea { /* for ie */
+    /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+    font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4, h5, h6 { font-size: 100%; }
+
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+/* 重置文本格式元素 */
+a, a:hover { text-decoration: none; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+@charset "UTF-8";
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-05-28 10:40:33
+ * @version $Id$
+ */
+/* line 13, /Users/mac/apps/web/webxx/app/assets/stylesheets/base.scss */
+.pine-container {
+  margin: auto;
+  width: 1110px;
+  padding: 20px 0;
+}
+
+/* line 14, /Users/mac/apps/web/webxx/app/assets/stylesheets/base.scss */
+.pine-padding {
+  padding: 20px;
+}
+
+/* line 16, /Users/mac/apps/web/webxx/app/assets/stylesheets/base.scss */
+img {
+  display: block;
+}
+
+/* 闪现消息 */
+/* line 19, /Users/mac/apps/web/webxx/app/assets/stylesheets/base.scss */
+#flash {
+  background: #e2eed9;
+}
+/* line 21, /Users/mac/apps/web/webxx/app/assets/stylesheets/base.scss */
+#flash .item {
+  height: 30px;
+  line-height: 30px;
+}
+/* line 22, /Users/mac/apps/web/webxx/app/assets/stylesheets/base.scss */
+#flash .success {
+  color: #849d80;
+}
+/* line 23, /Users/mac/apps/web/webxx/app/assets/stylesheets/base.scss */
+#flash .danger {
+  color: #f8504b;
+}
+/* line 24, /Users/mac/apps/web/webxx/app/assets/stylesheets/base.scss */
+#flash .info {
+  color: blue;
+}
+/* line 25, /Users/mac/apps/web/webxx/app/assets/stylesheets/base.scss */
+#flash .warning {
+  color: orange;
+}
+
+/* debug */
+/* line 29, /Users/mac/apps/web/webxx/app/assets/stylesheets/base.scss */
+.debug_dump {
+  font-size: 16px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-03-27 09:47:20
+ * @version $Id$
+ */
+
+/* 页面基础 */
+
+body { width: 1366px; margin: 0 auto; background: #fff; }
+
+/* 回到顶部 */
+#backtop { display: none; width: 56px; height: 56px; background: rgb(250,93,0); border-radius: 56px; cursor: pointer; opacity: 0.5;position: fixed;right: 40px;bottom: 40px;z-index: 25; font-size: 20px; line-height: 56px; text-align: center; color: #fff; }
+	#backtop:hover { opacity: 1; }
+
+/* 认证 */
+.oauth { width: 402px; border-radius: 10px; margin: 40px auto 60px; padding: 30px 40px 40px;  background: #eee; font-family: '微软雅黑','Helvetica Neue',sans-serif,'SimHei'; font-size: 14px; color: rgba(0,0,0,.6); }
+.oauth-title { text-align: center; font-size: 25px; color: #323a45; font-weight: normal; margin-bottom: 40px; }
+.oauth-field input { font-size: 16px; width: 370px; height: 48px; padding: 0 15px; margin-bottom: 15px; border: 1px solid rgba(50,58,69,.2); border-radius: 5px; }
+.oauth-actions input { margin-top: 40px; width: 100%; height: 48px; background: #323a45; color: #fff; transition: opacity .2s ease; opacity: 0.9; border-radius: 24px; border: none; font-size: 24px; cursor: pointer; }
+.oauth-link { text-align: center; margin-top: 20px; }
+.oauth-link-a, .oauth-link a {  color: rgba(0,0,0,.6); }
+
+/* 登录 */
+#login {}
+#login .tips { margin-bottom: 20px; font-size: 14px; }
+#login .tips .forget { float: right; }
+#login .quick { height: 60px; line-height: 60px; color: rgba(0,0,0,.6); font-size: 16px; }
+#login-quick-pic { float: right; margin-top: 5px; }
+#login-quick-pic a { margin-left: 20px; }
+#login-quick-pic a img { display: inline-block; height: 30px; width: 30px; }
+#login-qq:hover { src: '/images/login-github-2.png'; }
+#login-qq {  }
+#login-qq {  }
+
+/* 注册 */
+#signup { }
+
+/* 找回密码 */
+#getpassword { }
+#getpassword .login-link { float: left; }
+#getpassword .signup-link { float: right; }
+
+/* 导航 */
+#nav { background: rgb(255,255,255); border-bottom: solid 1px #e7e7e7; border-radius: 4px; }
+	#nav .pine-wrap { padding: 15px 0; }
+	#logo { width: 136px; height: 54px; }
+		#logo img { width: 136px; height: 54px; }
+	#menu { margin-left: 80px; padding: 7px 0; }
+	#menu li { margin-right: 20px; float: left; }
+	#menu li a { display: inline-block; text-align: center; color: #131313; font-family: 'Open Sans'; font-weight:600; font-size: 16px; border-radius: 20px; padding: 12px 20px; transition: all 0.4s ease 0s; }
+	#menu li a:hover, #menu li a.selected { background: #f8504b; color: #fff; }
+
+	#nav-login { padding: 10px; }
+	/*#323A45*/
+	/*#nav-login a { display: inline-block; height: 40px; line-height: 40px; background: #323A45; color: #fff; }*/
+	#nav-login .btn { display: inline-block; height: 32px; line-height: 32px; border: solid 1px #323A45; border-radius: 2em; padding: 0 2em; font-size: 14px; font-family: '微软雅黑', 'Helvetica Neue', sans-serif, 'SimHei'; margin-left: 7px; transition: all 0.4s ease 0s; }
+	#nav-login .signup, #nav-login .login:hover { background: #323A45; color: #fff; }
+	#nav-login .signup:hover, #nav-login .login { background: #fff; color: #323A45; }
+
+	#nav .link { color: #000; margin-left: 20px; display: inline-block; font-size: 14px; padding: 10px 0; color: #000; }
+
+/* 链接 */
+#link { background: rgb(30,31,36); padding: 30px 0; }
+	#link ul { margin: 0; }
+	#link .item { height: 235px; width: 275px;  }
+	#link h1 { font-size: 24px; color: #fff; }
+	#link .line { width: 40px; margin: 10px 0 30px; }
+	#link li { margin-bottom: 15px; }
+	#link li a { color: #fff; font-family: 'Open Sans'; font-weight:400;   font-size: 14px;   line-height: 20px;   margin: 0 0 10px;   overflow: hidden; padding: 0px 0 0px; transition: all 0.4s ease 0s; word-wrap:break-word; }
+	#link li a:hover { color: #f8504b; }
+
+/* 版权 */
+#copyright { background: rgb(30,31,36); border-top: solid 1px rgb(255,255,255); }
+	#copyright { color: #f2f2f2; font-family: 'Open Sans';font-weight:400; line-height: 20px; font-size: 14px; text-align:center; }
+	#copyright a { color: #f8504b }
+
+/* 常用样式 */
+.pine-wrap { margin: auto; width: 1110px; padding: 20px 0; }
+.pine-wrap>.name { color: #ffffff; font-family: 'Open Sans';font-weight:400; font-size: 30px; font-weight: normal; line-height: 40px; text-align: center;  }
+.pine-wrap>.words { color: #dedede; font-family: 'Open Sans';font-weight:400; font-size: 20px; line-height: 25px; margin-top: 10px; text-align: center; }
+.pine-wrap>.line { color: #f8504b; height: 3px; }
+
+.pine-center { left: 0; top: 0; right: 0; bottom: 0; margin: auto; }
+.pine-left { float: left; }
+.pine-right { float: right; }
+.pine-content { padding: 15px; font-size: 15px; color: #333; line-height: 1.7em; overflow: auto; }
+
+
+label, button { cursor: pointer; }
+
+.float_left { float: left; }
+.float_right { float: right; }
+.title { text-align: center; }
+div, p, a { overflow: hidden; text-overflow: ellipsis; }
+.span-title { color: #f8504b; margin: 0 6px; }
+.line {  margin:10px 0 30px; background: #f8504b; height: 5px; }
+body, button, input, select, textarea { font: 'Open Sans', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; }
+
+.blank { width: 30px; float: left; height: 1px; }
+
+
+
+
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-05-12 16:25:22
+ * @version $Id$
+ */
+
+
+#downloads_tip { height: 300px; background: #fff; text-align: center; }
+	#downloads_tip h1 { color: #204056; font-size: 40px; line-height: 46px; font-family: 'Oxygen', sans-serif; font-weight: 300; margin: 67px auto 20px; }
+	#downloads_tip p { color: #3e3e40; font-weight: 500; font-size: 14px; line-height: 20px }
+
+#downloads_content { background: rgb(233, 234, 234); }
+	#downloads_content .decorate { width: 0; height: 0; border-style: solid; border-width: 30px; border-color:  #fff rgb(233, 234, 234) rgb(233, 234, 234) rgb(233, 234, 234); margin: 0 auto }
+	#downloads_content .category { width: 300px; margin: 20px auto 80px; }
+	#downloads_content .category select { background: #fff; border-radius: 0; border-width: 1px; border-style: solid; width: 300px; height: 40px; font-size: 14px; font-family: 'Oxygen', sans-serif; font-weight: 300; color: #3e3e40; border-color: rgb(166, 166, 166); cursor: pointer; }
+
+	#downloads_content .content li { height: 200px; background: #fff; margin-bottom: 30px; }
+		#downloads_content .content li .left { cursor: pointer; text-align: center; vertical-align: middle; width: 200px; height: 200px; float: left; transition: all 0.2s ease 0s;}
+		#downloads_content .content li .right { width: 870px; height: 180px; padding: 10px 20px; float: right; transition: all 0.3s ease 0s; cursor: default; }
+		#downloads_content .content li .right h1 { color: #204056; font-size: 32px; height: 60px; line-height: 60px; font-family: 'Oxygen', sans-serif; }
+		#downloads_content .content li .right p { color: #3e3e40; font-size: 14px; height: 60px; line-height: 20px; font-weight: 10px; }
+		#downloads_content .content li .right .download-icon { cursor: pointer; display: block; width: 50px; height: 50px; float: left; margin-right: 30px; }
+
+
+		#downloads_content .content li .left img { vertical-align: middle; margin-top: 40px; width: 120px; height: 120px; }
+
+		#downloads_content .content li .left:hover { background: rgb(52, 179, 160); }
+		#downloads_content .content li .right:hover { background: rgb(52, 179, 160); }
+		#downloads_content .content li .right:hover p, #downloads_content .content li .right:hover h1 { color: #fff; }
+@charset "UTF-8";
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date 	2016-03-26 09:16:49
+ * @version $Id$
+ */
+/* 轮播图 */
+/* line 11, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#banner {
+  height: 512px;
+  background: #eee;
+  opacity: 1;
+}
+/* line 13, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#banner .pic {
+  width: 5464px;
+  position: relative;
+}
+/* line 15, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#banner .pic li {
+  width: 1366px;
+  height: 512px;
+  float: left;
+  font-size: 0;
+  z-index: 0;
+}
+/* line 16, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#banner .pic li img {
+  width: 1366px;
+  height: 512px;
+  transition: all 1s ease 0s;
+}
+/* line 19, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#banner .flex {
+  cursor: pointer;
+  z-index: 9;
+}
+/* line 20, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#banner .flex_prev {
+  float: left;
+  position: relative;
+  top: -250px;
+  left: 60px;
+  width: 37px;
+  height: 66px;
+  background: url(/assets/slide-prev-4ea75b79f4eb780816da351a7491f5474d2b108d63d189afd6e2ec230cc5658a.png);
+}
+/* line 21, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#banner .flex_next {
+  float: right;
+  position: relative;
+  top: -250px;
+  right: 60px;
+  width: 37px;
+  height: 66px;
+  background: url(/assets/slide-next-3db10fe0cf00eb0a9ca86ad49663bbb7f8b604d53198d691cdef34e5950d2b25.png);
+}
+
+/* 大纲 */
+/* line 25, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline {
+  background: #f7f7f7;
+  padding: 40px 0;
+}
+/* line 27, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline .line {
+  height: 5px;
+  background-color: #f8504b;
+  width: 100px;
+  margin: 0 auto 30px;
+}
+/* line 30, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_title {
+  height: 160px;
+}
+/* line 32, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_title h1 {
+  color: #121212;
+  font-family: 'Open Sans';
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 35px;
+  margin: 0 0 10px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+/* line 33, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_title p {
+  color: #6A6A6A;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+/* line 38, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content {
+  height: 285px;
+  text-align: center;
+}
+/* line 41, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content .item {
+  height: 285px;
+  width: 275px;
+}
+/* line 42, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content .icon {
+  margin: 0 auto 10px;
+  width: 120px;
+  height: 120px;
+  background: #f2f2f2 url(/assets/outline-874431d23a3d78cd1ede27e3a0f3c0730a2304aa98c0e784a0238b35c6493ea2.png);
+  transition: all 0.4s ease 0s;
+}
+/* line 44, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content .icon img {
+  width: 70px;
+  height: 70px;
+  margin: 25px;
+}
+/* line 45, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content .icon:hover {
+  background-color: #f8504b;
+}
+/* line 48, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content .title {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* line 50, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content .title a {
+  color: #121212;
+}
+/* line 52, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content .main {
+  color: #6a6a6a;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  padding: 0 10px;
+  text-align: center;
+  margin-bottom: 6px;
+}
+/* line 53, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content .view {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  transition: all 0.4s ease 0s;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+}
+/* line 55, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content .view a {
+  color: #f8504b;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  transition: all 0.4s ease 0s;
+  font-size: 14px;
+  line-height: 25px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+/* line 57, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#outline #out_content .view a:hover {
+  color: #121212;
+  transition: all 0.4s ease 0s;
+}
+
+/* 项目演示 */
+/* line 64, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project {
+  background: url(/assets/project-2c89418e201ed3745c5ffb41873689c9305bb66fd9d7a6750f53d51ec61b03ca.png);
+  padding: 30px 0;
+}
+/* line 66, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .name {
+  color: #ffffff;
+}
+/* line 67, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .words {
+  color: #dedede;
+}
+/* line 68, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .line {
+  width: 100px;
+  margin: 30px auto 0;
+}
+/* line 70, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .demo {
+  margin-top: 50px;
+}
+/* line 72, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .demo li {
+  height: 310px;
+  width: 270px;
+  margin-left: 3px;
+  margin-bottom: 40px;
+  float: left;
+}
+/* line 74, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .demo li:hover .remarks {
+  background: #f8504b;
+  color: #fff;
+}
+/* line 77, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .demo img {
+  transition: all 0.3s ease 0s;
+  height: 270px;
+  width: 270px;
+}
+/* line 78, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .demo .remarks {
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 1em;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 14px;
+  color: #515151;
+  transition: all 0.3s ease 0s;
+}
+/* line 80, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .more {
+  text-align: center;
+  margin-top: 50px;
+}
+/* line 82, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .more a {
+  display: inline-block;
+  color: #FFFFFF;
+  text-shadow: 0px 1px 1px #777777;
+  border: 2px solid #ffffff;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 14px 30px;
+  transition: all 0.3s ease 0s;
+  /*vertical-align: middle;*/
+}
+/* line 83, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#project .more a:hover {
+  background: #f8504b;
+  border-color: #f8504b;
+}
+
+/* 名博推荐 */
+/* line 88, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger {
+  background: #fff;
+  padding: 30px 0;
+}
+/* line 91, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger .name {
+  color: #121212;
+}
+/* line 92, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger .words {
+  color: #6a6a6a;
+}
+/* line 93, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger .line {
+  width: 100px;
+  margin: 30px auto 0;
+}
+/* line 95, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main {
+  margin-top: 50px;
+}
+/* line 97, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main > ul > li {
+  transition: all 0.3s ease 0s;
+  background: #1b1d21;
+  padding: 20px;
+  width: 500px;
+  height: 240px;
+  border-bottom: solid 10px #f8504b;
+  float: left;
+  margin-bottom: 30px;
+}
+/* line 99, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main > ul > li:hover {
+  background: #ececec;
+}
+/* line 101, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main > ul > li:hover > .describe > .name {
+  color: #1b1d21;
+}
+/* line 102, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main > ul > li:hover > .describe > .words {
+  color: #555;
+}
+/* line 106, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .header {
+  width: 160px;
+  height: 170px;
+  float: left;
+}
+/* line 107, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main img {
+  width: 160px;
+  height: 170px;
+}
+/* line 108, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe {
+  width: 320px;
+  height: 240px;
+  float: left;
+  margin-left: 20px;
+}
+/* line 110, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .name {
+  transition: all 0.3s ease 0s;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 22px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: left;
+}
+/* line 111, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .words {
+  transition: all 0.3s ease 0s;
+  color: #dedede;
+  font-size: 15px;
+  line-height: 25px;
+  margin-top: 15px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: left;
+  height: 120px;
+  overflow: hidden;
+}
+/* line 112, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow {
+  margin-top: 15px;
+}
+/* line 114, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow li {
+  float: left;
+  margin-right: 10px;
+}
+/* line 116, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow li a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+/* line 117, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow li a.weichat {
+  transition: all 0.3s ease 0s;
+  background: url(/assets/weichat1_100px-6f43ebdf870efc31cc43d70f0cc41e1c873ac05d9efc759dd5b710a901aa59c9.png);
+  background-size: 32px 32px;
+}
+/* line 118, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow li a.sinaweibo {
+  transition: all 0.3s ease 0s;
+  background: url(/assets/sinaweibo1_100px-53fc1277c28363a6cf6b922dcf0e606d6a18f2d643588e279aeb40f144ee0e58.png);
+  background-size: 32px 32px;
+}
+/* line 119, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow li a.tencentweibo {
+  transition: all 0.3s ease 0s;
+  background: url(/assets/tencentweibo1_100px-da439763c71ae37539d73e42a217e2f4e4af72fd40fdb40b4f0fdbf17018a658.png);
+  background-size: 32px 32px;
+}
+/* line 120, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow li a.qq {
+  transition: all 0.3s ease 0s;
+  background: url(/assets/qq1_100px-85b2aab51628a817cf7cbd19a1d77951e95c7cb6ba756b9fac7c51b6cda12d20.png);
+  background-size: 32px 32px;
+}
+/* line 121, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow li a.weichat:hover {
+  background: url(/assets/weichat2_100px-d71916af2dd214c8c7767bba843a9ed8eeca67a68c05a4455c7d5ba4e0dd9699.png);
+  background-size: 32px 32px;
+}
+/* line 122, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow li a.sinaweibo:hover {
+  background: url(/assets/sinaweibo2_100px-c3548417ec753e84a79e92ca09cab202753cddbecdc2c01da136feda468b9924.png);
+  background-size: 32px 32px;
+}
+/* line 123, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow li a.tencentweibo:hover {
+  background: url(/assets/tencentweibo2_100px-550c92d36e5bf3b6df7227850adff8efefec2905d0c7f205876c330a5f138a30.png);
+  background-size: 32px 32px;
+}
+/* line 124, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#blogger #blogger_main .describe .follow li a.qq:hover {
+  background: url(/assets/qq2_100px-4be68a50083fd46bcf8a06c0bf5f21c1612ffa436cc7e182e8d5cbb0a38e9902.png);
+  background-size: 32px 32px;
+}
+
+/* 关于 */
+/* line 133, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#about {
+  background: #f8504b;
+  border-top: solid 2px #e53a35;
+  border-bottom: solid 2px #e53a35;
+}
+/* line 135, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#about .describe {
+  height: 120px;
+  width: 850px;
+  text-align: left;
+}
+/* line 137, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#about .describe .name {
+  font-size: 30px;
+  color: #ffffff;
+  font-family: 'Open Sans';
+  line-height: 35px;
+  margin: 0 0 10px;
+}
+/* line 138, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#about .describe .words {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0px;
+}
+/* line 140, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#about .contact {
+  height: 120px;
+  width: 250px;
+  text-align: right;
+}
+/* line 142, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#about .contact a {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 2px solid #ffffff;
+  display: inline-block;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 22px;
+  padding: 10px 30px;
+  transition: all 0.4s ease 0s;
+  margin-top: 30px;
+}
+/* line 144, /Users/mac/apps/web/webxx/app/assets/stylesheets/home.scss */
+#about .contact a:hover {
+  background: #fff;
+  color: #f8504b;
+}
+
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-05-12 16:25:22
+ * @version $Id$
+ */
+
+
+@charset "UTF-8";
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-05-24 15:50:25
+ * @version $Id$
+ */
+/*#f6f6f6*/
+/* line 15, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content a {
+  color: #333;
+}
+/* line 16, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .pagination {
+  margin-bottom: 20px;
+}
+/* line 18, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .pagination > * {
+  display: inline-block;
+  border: solid 1px #ddd;
+  float: left;
+  color: #778087;
+  padding: 8px 12px;
+}
+/* line 20, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .pagination a {
+  background-color: #f8504b;
+  color: #fff;
+}
+
+/* 整体 */
+/* line 25, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics {
+  background: #e1e1e1;
+}
+
+/* line 26, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics .main {
+  width: 74%;
+  border-radius: 3px;
+}
+
+/* line 27, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics .banner {
+  width: 24%;
+}
+
+/* 左侧 */
+/* line 30, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics .main .topics-title .title-a {
+  color: #f8504b;
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+/* line 31, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics .main .topics-title a.selected {
+  background-color: #f8504b;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-right: 20px;
+  padding: 3px 4px;
+}
+
+/* line 34, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content > .cell {
+  height: 30px;
+  line-height: 30px;
+  border-top: solid 1px #f0f0f0;
+  padding: 10px 10px;
+}
+/* line 35, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .pic {
+  width: 40px;
+}
+/* line 37, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .pic img {
+  width: 30px;
+  height: 30px;
+}
+/* line 39, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .count {
+  width: 40px;
+  color: #b4b4b4;
+  font-size: 10px;
+}
+/* line 41, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .labelspan {
+  width: 90px;
+}
+/* line 43, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .labelspan .label {
+  margin-top: 5px;
+  margin-right: 5px;
+  padding: 3px 4px;
+  font-size: 12px;
+  line-height: normal;
+  border-radius: 3px;
+}
+/* line 44, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .labelspan .essence {
+  background: #f8504b;
+  color: #fff;
+}
+/* line 45, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .labelspan .category {
+  background: #e5e5e5;
+  color: #999;
+}
+/* line 48, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .title {
+  font-size: 16px;
+}
+/* line 50, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .title a {
+  color: #333;
+}
+/* line 52, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .reply {
+  width: 30px;
+  height: 20px;
+  margin-top: 0;
+}
+/* line 54, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .reply img {
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+}
+/* line 56, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .time {
+  width: 70px;
+  color: #778087;
+  font-size: 11px;
+}
+/* line 57, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .delete {
+  width: 60px;
+  color: #77807B;
+}
+/* line 58, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_content .blank {
+  height: 30px;
+}
+
+/* 右侧 */
+/* line 64, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics .part {
+  margin-bottom: 14px;
+  background: #fff;
+  color: #77807B;
+  font-size: 14px;
+}
+/* line 66, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics .part .content {
+  padding: 10px 18px 20px;
+}
+
+/* line 69, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-banner {
+  /* 积分 */
+}
+/* line 70, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-banner .cell {
+  margin-top: 10px;
+}
+/* line 71, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-banner .cell a {
+  color: #77807B;
+}
+/* line 73, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-banner .name a {
+  color: #333;
+}
+/* line 77, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-banner .user-score .cell .score {
+  width: 60px;
+  display: inline-block;
+}
+/* line 78, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-banner .user-score .cell .user {
+  width: 130px;
+  display: inline-block;
+}
+
+/* 样式 */
+/* line 85, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+.topics-title {
+  height: 40px;
+  line-height: 40px;
+  background: #f6f6f6;
+  padding: 0 20px;
+}
+
+/* line 86, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+.topics-part {
+  background: #fff;
+  margin-top: 20px;
+}
+
+/* show.html.erb */
+/* line 95, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_main .title {
+  background: #fff;
+  border: solid 1px #e5e5e5;
+  padding: 20px;
+  text-align: left;
+}
+/* line 97, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_main .title .title-name {
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+}
+/* line 98, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_main .title .title-attr {
+  font-size: 12px;
+  color: #838383;
+  margin-top: 20px;
+  padding-bottom: 5px;
+}
+/* line 100, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_main .content {
+  background: #fff;
+  border-top: solid 1px #e5e5e5;
+}
+/* line 102, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_main .topic-attr {
+  margin: 20px;
+}
+/* line 104, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_main .topic-attr a {
+  color: #333;
+}
+/* line 105, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_main .topic-attr .item {
+  margin-right: 10px;
+}
+
+/* 回复 */
+/* line 111, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_reply {
+  margin-top: 20px;
+}
+/* line 113, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_reply .topics-title {
+  font-size: 14px;
+  color: #444;
+}
+/* line 114, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_reply .cell {
+  border-top: solid 1px #e5e5e5;
+  padding: 10px;
+}
+/* line 115, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_reply .pine-left {
+  width: 4%;
+}
+/* line 116, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_reply .header img {
+  width: 30px;
+  height: 30px;
+}
+/* line 118, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_reply .pine-right {
+  width: 96%;
+}
+/* line 119, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_reply .attr {
+  padding: 5px;
+}
+/* line 121, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_show_reply .attr a {
+  color: #333;
+}
+
+/* 右侧作者 */
+/* line 127, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-author {
+  padding: 20px;
+}
+/* line 130, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-author .header {
+  vertical-align: middle;
+}
+/* line 132, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-author .header img {
+  widows: 40px;
+  height: 40px;
+  vertical-align: middle;
+  display: inherit;
+  margin-right: 10px;
+}
+/* line 134, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-author .name {
+  font-size: 16px;
+  color: #778077;
+  margin-bottom: 20px;
+}
+/* line 136, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-author .email {
+  color: #333;
+  margin: 20px 0;
+}
+/* line 137, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-author .score {
+  color: #333;
+  margin-bottom: 20px;
+}
+/* line 138, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-author .sign {
+  color: #333;
+  font-style: italic;
+}
+
+/* new.html.erb */
+/* line 146, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-new-form {
+  text-indent: 0;
+}
+
+/* line 147, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_category {
+  height: 30px;
+  line-height: 30px;
+  width: 300px;
+  border-radius: 3px;
+}
+
+/*#topics-new-form .category select { width: 200px; height: 30px; line-height: 30px; }*/
+/* line 149, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-new-form .title {
+  margin-top: 20px;
+  text-align: left;
+  width: 760px;
+  padding: 0 5px;
+  height: 30px;
+  border: solid 1px #e5e5e5;
+}
+
+/* line 150, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-new-form .area-content {
+  margin-top: 20px;
+  width: 760px;
+  padding: 5px;
+  height: 500px;
+  border: solid 1px #e5e5e5;
+}
+
+/* line 151, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics-new-form .submit {
+  padding: 10px 20px;
+  background: #f8504b;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+}
+
+/* line 153, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics .topics-title .titlename {
+  padding: 0;
+  color: #f8504b;
+  font-size: 14px;
+}
+
+/* banner */
+/* line 158, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_pubbanner .pub {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 10px 10px;
+  letter-spacing: 2px;
+  background: #f8504b;
+  color: #fff;
+}
+
+/* line 159, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_pubbanner > .tip {
+  margin-top: 15px;
+  font-size: 13px;
+  color: gray;
+}
+
+/* show.html.erb */
+/* line 163, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_reply_new .topics-title {
+  font-size: 14px;
+  color: #444;
+}
+
+/* line 164, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_reply_form {
+  text-indent: 0;
+}
+
+/* line 165, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_reply_form .area-content {
+  width: 760px;
+  padding: 5px;
+  height: 200px;
+  border: solid 1px #e5e5e5;
+}
+
+/* line 166, /Users/mac/apps/web/webxx/app/assets/stylesheets/topics.scss */
+#topics_reply_form .submit {
+  cursor: pointer;
+  background: #f8504b;
+  padding: 10px 20px;
+  border-radius: 3px;
+  color: #fff;
+  border: none;
+}
+@charset "UTF-8";
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-05-28 10:40:02
+ * @version $Id$
+ */
+/* edit */
+/* line 15, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit, #user_show {
+  background: #eee;
+  /* 左侧信息 */
+  /* 右侧表单 */
+  /* 通用样式 */
+}
+/* line 19, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .pine-left, #user_show .pine-left {
+  width: 25%;
+}
+/* line 23, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .pine-left .topics .gravatar, #user_show .pine-left .topics .gravatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+}
+/* line 24, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .pine-left .topics .setting-link, #user_edit .pine-left .topics .topic-link, #user_show .pine-left .topics .setting-link, #user_show .pine-left .topics .topic-link {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+}
+/* line 28, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .pine-left .add-oauth .oauth-item, #user_show .pine-left .add-oauth .oauth-item {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+}
+/* line 33, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .pine-right, #user_show .pine-right {
+  width: 70%;
+}
+/* line 36, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .pine-right .field, #user_show .pine-right .field {
+  margin-bottom: 20px;
+}
+/* line 38, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .pine-right .field label, #user_show .pine-right .field label {
+  margin-bottom: 10px;
+  display: block;
+}
+/* line 39, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .pine-right .field input, #user_show .pine-right .field input {
+  height: 20px;
+  width: 80%;
+  color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: .65em 1em;
+  border-radius: .3125em;
+}
+/* line 43, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .pine-right .submit input, #user_show .pine-right .submit input {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  background: #f8504b;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 14px;
+  cursor: pointer;
+}
+/* line 50, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .user-edit-cell, #user_show .user-edit-cell {
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+/* line 51, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit .title, #user_show .title {
+  background: #fafafa;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: solid 1px #eee;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: left;
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+/* line 53, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit a, #user_show a {
+  color: #333;
+  font-family: Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Source Han Sans CN",'Roboto',"Heiti SC","Microsoft Yahei",sans-serif;
+  font-size: 14px;
+}
+/* line 55, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit a:hover, #user_show a:hover {
+  text-decoration: underline;
+}
+/* line 57, /Users/mac/apps/web/webxx/app/assets/stylesheets/users.scss */
+#user_edit label, #user_show label {
+  color: #555;
+  font-size: 0.875em;
+  cursor: default;
+  font-family: '微软雅黑','Helvetica Neue',sans-serif,'SimHei';
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+ */
+
