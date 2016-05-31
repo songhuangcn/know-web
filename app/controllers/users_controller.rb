@@ -21,11 +21,6 @@ class UsersController < ApplicationController
 			render 'new' and return
 		end			
 
-		if User.exists?(email: params[:user][:email])
-			flash.now[:danger] = '邮箱账号已存在'
-			render 'new' and return
-		end			
-
 		@user = User.new(user_params)
 
 		# 结果
@@ -34,7 +29,7 @@ class UsersController < ApplicationController
 			render 'new' and return
 		else
 			log_in @user
-			flash[:success] = "注册成功。#{@user.username}，欢迎来到Web学习网，为了让大家更好的认识你，请先补全信息"
+			flash[:success] = "注册成功。#{@user.username}，欢迎来到Web学习网，网站头像由Gravtar提供，为了显示你个人头像，请先补全email信息"
 			redirect_to edit_user_path(@user) and return
 		end
 	end
@@ -103,7 +98,11 @@ class UsersController < ApplicationController
 		# 确保用户正确
 	    def correct_user
 	      @user = User.find(params[:id])
-	      redirect_to(root_url) if !current_user?(@user)
+
+	      if !current_user?(@user)
+			flash[:danger] = "禁止操作，不能修改其他用户信息"
+	      	redirect_to(root_url) 
+	      end
 	    end
 
 		# 传参处理

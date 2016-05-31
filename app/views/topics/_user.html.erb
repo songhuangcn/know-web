@@ -1,0 +1,9 @@
+<div class="topics-title"><h2 class="authorname">我的信息</h2></div>
+<div id="topics-author">
+	<span class="header"><%= gravatar_for current_user %></span>
+	<span class="name"><%= link_to current_user.username, user_path(current_user) %></span>
+
+	<div class="email">邮箱：<%= current_user.email %></div>
+	<div class="score">积分：<%= current_user.score %></div>
+	<div class="sign">签名：<%= current_user.sign %></div>
+</div>

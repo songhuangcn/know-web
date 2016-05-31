@@ -5,7 +5,6 @@
  * @version $Id$
  */
 
-
 $(function() {
 	toTop(200);
 });

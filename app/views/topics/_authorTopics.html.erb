@@ -1,0 +1,8 @@
+<div class="part">
+	<div class="topics-title"><h2>作者其他话题</h2></div>
+	<div class="content">
+		<% @topics_author.each do |topic| %>
+		<div class="cell"><%= link_to topic.title, topic_path(topic) %></div>
+		<% end %>
+	</div>
+</div>

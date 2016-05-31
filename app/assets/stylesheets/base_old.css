@@ -84,7 +84,7 @@ body { width: 1366px; margin: 0 auto; background: #fff; }
 .pine-center { left: 0; top: 0; right: 0; bottom: 0; margin: auto; }
 .pine-left { float: left; }
 .pine-right { float: right; }
-.pine-content { padding: 15px; font-size: 15px; color: #333; line-height: 1.7em; overflow: auto; text-indent: 2em; }
+.pine-content { padding: 15px; font-size: 15px; color: #333; line-height: 1.7em; overflow: auto; }
 
 
 label, button { cursor: pointer; }

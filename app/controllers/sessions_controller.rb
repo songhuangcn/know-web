@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 
     if user && !!user.authenticate(params[:session][:password])
     	log_in user
+      current_user.update(score: current_user.score+score(:login))
     	redirect_back_or user and return
     else
       flash.now[:danger] = '登陆失败，账户名或密码错误'
@@ -16,6 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
   	log_out
-  	redirect_to root_url
+  	redirect_to :back
   end
 end

@@ -1,13 +1,9 @@
 <div class="topics-title"><h2>用户积分 Top 10 >></h2></div>
-<div class="content" id="topics-banner-content">
-	<div class="cell"><span class="score">19333</span><a class="user" href="">PineWong</a></div>
-	<div class="cell"><span class="score">19233</span><a class="user" href="">PineWong</a></div>
-	<div class="cell"><span class="score">15333</span><a class="user" href="">PineWong</a></div>
-	<div class="cell"><span class="score">9223</span><a class="user" href="">PineWong</a></div>
-	<div class="cell"><span class="score">8333</span><a class="user" href="">PineWong</a></div>
-	<div class="cell"><span class="score">7333</span><a class="user" href="">PineWong</a></div>
-	<div class="cell"><span class="score">6333</span><a class="user" href="">PineWong</a></div>
-	<div class="cell"><span class="score">3433</span><a class="user" href="">PineWong</a></div>
-	<div class="cell"><span class="score">1333</span><a class="user" href="">PineWong</a></div>
-	<div class="cell"><span class="score">123</span><a class="user" href="">PineWong</a></div>
+<div class="content user-score">
+	<% @users_score.each do |user| %>
+	<div class="cell">
+		<span class="score"><%= user.score %></span>
+		<%= link_to user.username, user_path(user), class: 'user' %>
+	</div>
+	<% end %>
 </div>

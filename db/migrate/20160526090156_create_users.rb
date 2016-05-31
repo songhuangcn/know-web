@@ -4,9 +4,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :username
       t.string :password_digest
       t.string :email
-      t.integer :score
-      t.string :sign
-      t.string :thumb
+      t.integer :score, default: 100
+      t.string :sign, default: '签名是啥？'
+      t.boolean :admin, default: false
+      t.boolean :deleted, default: false
 
       t.timestamps null: false
     end

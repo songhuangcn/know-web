@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   # 认证
-  get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
   get 'signup' => 'users#new'
 
   # 控制器
@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get 'study' => 'study#index'
 
   # 资源
+  get '/topics/essence', to: 'topics#essence', as: 'essence_topic'
+  get '/topics/ask', to: 'topics#ask', as: 'ask_topic'
+  get '/topics/share', to: 'topics#share', as: 'share_topic'
+  get '/topics/other', to: 'topics#other', as: 'other_topic'
+  get '/topics/:id/like', to: 'topics#like', as: 'like_topic'   # 点赞
   resources :topics do
     resources :comments
   end

@@ -28,6 +28,7 @@ rake assets:precompile;
 # bundle install;
 
 echo '/*** Rake Db:';
+rake db:drop;
 rake db:create;
 rake db:migrate;
 

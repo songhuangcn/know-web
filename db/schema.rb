@@ -18,10 +18,11 @@ ActiveRecord::Schema.define(version: 20160529131147) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
+    t.boolean  "deleted",    default: false
     t.integer  "user_id"
     t.integer  "topic_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "comments", ["topic_id"], name: "index_comments_on_topic_id", using: :btree
@@ -30,10 +31,15 @@ ActiveRecord::Schema.define(version: 20160529131147) do
   create_table "topics", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.string   "category"
+    t.string   "category",    default: "瞎扯淡"
+    t.integer  "view_count",  default: 0
+    t.integer  "reply_count", default: 0
+    t.integer  "like_count",  default: 0
+    t.boolean  "essence",     default: false
+    t.boolean  "deleted",     default: false
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "topics", ["user_id"], name: "index_topics_on_user_id", using: :btree
@@ -42,11 +48,12 @@ ActiveRecord::Schema.define(version: 20160529131147) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "email"
-    t.integer  "score"
-    t.string   "sign"
-    t.string   "thumb"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "score",           default: 100
+    t.string   "sign",            default: "签名是啥？"
+    t.boolean  "admin",           default: false
+    t.boolean  "deleted",         default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "remember_digest"
   end
 

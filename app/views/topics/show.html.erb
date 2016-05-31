@@ -1,22 +1,10 @@
-<% content_for :title, 'Web学习网 - 为你的Web开发技能加分' %>
-
-<% content_for :styles do %>
-	<link href="/styles/libs/reset.css" rel="stylesheet" />
-	<link href="/styles/base.css" rel="stylesheet" />
-	<link href="/styles/topics.css" rel="stylesheet" />
-<% end %>
-
-<% content_for :scripts do %>
-	<script type="text/javascript" src="/scripts/libs/jquery-2.2.2.min.js"></script>
-	<script type="text/javascript" src="/scripts/base.js"></script>
-	<script type="text/javascript" src="/scripts/topics.js"></script>
-<% end %>
+<% content_for :title, '话题详情' %>
 
 <div id="topics"><div class="pine-wrap">
 	<!-- 左侧 -->
 	<div class="main pine-left">
 		<!-- 话题内容 -->
-		<div id="topics_show_main" class="topics-part">
+		<div id="topics_show_main" class="topics-part" style="margin-top: 0">
 			<!-- 位置 -->
 			<%= render 'position' %>
 		
@@ -24,16 +12,26 @@
 				<div><h1 class="title-name"><%= @topic.title %></h1></div>
 				<div class="title-attr">
 					<span class="atime">• 发布于 <%= @topic.created_at.strftime('%Y-%m-%d') %></span>
-					<span class="author">• 作者 PineWong</span>
-					<span class="count">• 83 次浏览</span>
-					<span class="rtime">• 最后编辑时间 <%= @topic.updated_at.strftime('%Y-%m-%d') %></span>
+					<span class="author">• 作者 <%= @topic.user.username %></span>
+					<span class="count">• <%= @topic.view_count %> 次浏览</span>
 					<span class="category">• 来自 <%= @topic.category %></span>
-					<span class="edit">• <a href="<%= edit_topic_path %>">编辑文章</a></span>
+					<span class="like">• <%= @topic.like_count %> 个赞</span>
+					<span class="rtime">• 最后编辑时间 <%= @topic.updated_at.strftime('%Y-%m-%d') %></span>
 				</div>
 			</div>
 			<div class="pine-content">
-				<p><%= @topic.content %></p>
+				<%= @topic.deleted? ? '话题已被删除！' : @topic.content %>
 			</div>
+
+			<div class="topic-attr">
+				<span class="like item"><%= link_to '为作者点赞', like_topic_path %></span>
+
+				<!-- 当前文章用户登陆 -->
+				<% if current_user? @topic.user %>
+				<span class="edit item"><a href="<%= edit_topic_path %>">编辑文章</a></span>
+				<% end %>
+			</div>
+
 			<!-- <div class="title">
 				<div><h1 class="title-name">Mac OS X 中 brew 搭建 Ruby Rails 环境</h1></div>
 				<div class="title-attr">
@@ -52,7 +50,7 @@
 		<!-- 话题回复 -->
 		<div id="topics_show_reply" class="topics-part">
 			<!-- 回复数 -->
-			<div class="topics-title"><span>14 回复</span></div>
+			<div class="topics-title"><span><%= @topic.comments.count %> 回复</span></div>
 
 			<!-- 回复 -->
 			<%= render @topic.comments %>
@@ -76,21 +74,18 @@
 		</div>
 
 		<!-- 作者话题 -->
-		<div class="part">
-			<div class="topics-title"><h2>作者其他话题</h2></div>
-			<div class="content">
-				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
-				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
-				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
-				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
-				<div class="cell"><a href="">Docker三步搭建开发调试环境</a></div>
-			</div>
-		</div>
+		<%= render 'authorTopics' %>
 
 		<!-- 无人回复话题 -->
 		<div class="part">
 			<%= render 'noreply' %>
 		</div>
+
+		<!-- 精华 -->
+		<div class="part">
+			<%= render 'essence' %>
+		</div>
+		
 	</div>
 </div></div>
 
