@@ -12,24 +12,21 @@
 
 # RUN gem update --system
 echo '/*** Gem Source:';
-gem sources -r https://rubygems.org/ -a https://gems.ruby-china.org/;
+# gem sources -r https://rubygems.org/ -a https://gems.ruby-china.org/;
 gem source;
 
 echo '/*** Bundle Install:';
-gem install bundler;
-bundle config mirror.https://rubygems.org https://gems.ruby-china.org;
+# gem install bundler;
+# bundle config mirror.https://rubygems.org https://gems.ruby-china.org;
 bundle install;
 
 
 echo '/*** Rake Asset:';
-rake assets:precompile;
-
-echo '/*** Bundle install:'
-bundle install;
+# rake assets:precompile;
 
 echo '/*** Rake Db:';
-rake db:drop;
-rake db:create;
+# rake db:drop;
+# rake db:create;
 rake db:migrate;
 
 # docker rm -f webxx; docker run --name webxx --link postgres -v /home/apps/webxx:/home/apps/web -p 80:80 -d pinewong/passenger-ruby22;
