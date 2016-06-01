@@ -1,9 +1,9 @@
 <div id="banner">
 	<ul class="pic">
-		<li class="banner0"><%= image_tag 'show0.jpg' %></li>
-		<li class="banner1"><%= image_tag 'show1.jpg' %></li>
-		<li class="banner2"><%= image_tag 'show2.jpg' %></li>
-		<li class="banner3"><%= image_tag 'show3.jpg' %></li>
+		<li class="banner0"><%= link_to image_tag('show0.jpg'), topics_path, src: 'banner' %></li>
+		<li class="banner1"><%= link_to image_tag('show1.jpg'), topics_path, src: 'banner' %></li>
+		<li class="banner2"><%= link_to image_tag('show2.jpg'), topics_path, src: 'banner' %></li>
+		<li class="banner3"><%= link_to image_tag('show3.jpg'), topics_path, src: 'banner' %></li>
 	</ul>
 	<ul class="flex">
 		<li class="flex_prev"></li>
