@@ -3,5 +3,10 @@
 	<span> / </span>
 	<span><a href="<%= topics_path %>" class="titlename">话题讨论</a></span>
 	<span> / </span>
+
+	<% if params[:action] == 'edit' %>
 	<span>编辑话题</span>
+	<% else %>
+	<span>发布话题</span>
+	<% end %>
 </div>

@@ -11,6 +11,7 @@
 $base-color: #f8504b;
 
 #topics_content {
+	min-height: 1000px;
 	a { color: #333; }
 	.pagination {
 		margin-bottom: 20px;
@@ -142,12 +143,14 @@ $base-color: #f8504b;
 
 
 /* new.html.erb */
-#topics-new-form { text-indent: 0; }
-#topics_category { height: 30px; line-height: 30px; width: 300px; border-radius: 3px; }
+#topics-new-form { 
+	text-indent: 0; 
+	#topic_category { height: 30px; line-height: 30px; width: 300px; border-radius: 3px; }
 /*#topics-new-form .category select { width: 200px; height: 30px; line-height: 30px; }*/
-#topics-new-form .title { margin-top: 20px; text-align: left; width: 760px; padding: 0 5px; height: 30px; border: solid 1px #e5e5e5; }
-#topics-new-form .area-content { margin-top: 20px; width: 760px; padding: 5px; height: 500px; border: solid 1px #e5e5e5;  }
-#topics-new-form .submit { padding: 10px 20px; background: #f8504b; cursor: pointer; color: #fff; border-radius: 3px; border: none; }
+	.title { margin-top: 20px; text-align: left; width: 760px; padding: 0 5px; height: 30px; border: solid 1px #e5e5e5; }
+	.area-content { margin-top: 20px; width: 760px; padding: 5px; height: 500px; border: solid 1px #e5e5e5;  }
+	.submit { padding: 10px 20px; background: #f8504b; cursor: pointer; color: #fff; border-radius: 3px; border: none; }
+}
 
 #topics .topics-title .titlename { padding: 0; color: #f8504b; font-size: 14px; }
 

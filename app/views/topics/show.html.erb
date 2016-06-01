@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="topic-attr">
-				<span class="like item"><%= link_to '为作者点赞', like_topic_path %></span>
+				<span class="like item"><%= link_to '为作者点赞', like_topic_path, onclick: "$(this).disabled = true" %></span>
 
 				<!-- 当前文章用户登陆 -->
 				<% if current_user? @topic.user %>

@@ -21,7 +21,7 @@ module ApplicationHelper
 
   	# 话题是否精华
   	def essence?(topic)
-  		topic.like_count >= 5
+  		topic.like_count >= 20
   	end
 
   	# 加分方案
