@@ -6,7 +6,9 @@
 
 	<% if params[:action] == 'edit' %>
 	<span>编辑话题</span>
-	<% else %>
+	<% elsif params[:action] == 'new' %>
 	<span>发布话题</span>
+	<% else %>
+	<span>话题详情</span>
 	<% end %>
 </div>
