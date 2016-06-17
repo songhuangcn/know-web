@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sh /home/apps/web/docker.sh
+sh /home/apps/web/config/docker.sh
