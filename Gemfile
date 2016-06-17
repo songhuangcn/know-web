@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# gem 'devise'
+gem 'devise'
 
 # has_secure_password
 gem 'bcrypt', '3.1.7'
