@@ -14,7 +14,7 @@ $(function() {
 	changeDemo();
 
 	// 离开页面停止计时器
-	leaveStop()
+	leaveStop();
 });
 
 function leaveStop() {
