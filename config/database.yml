@@ -16,5 +16,6 @@ test:
 production:
   <<: *default
   database: webxx_production
+  password: <%= ENV['DATABASE_PASSWORD'] || 'postgres' %>
   host:     <%= ENV['POSTGRES_PORT_5432_TCP_ADDR'] || 'localhost' %>
   port:     <%= ENV['POSTGRES_PORT_5432_TCP_PORT'] || '5432' %>
