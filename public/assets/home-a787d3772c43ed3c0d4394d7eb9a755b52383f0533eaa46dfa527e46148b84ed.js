@@ -5,6 +5,7 @@
  * @version $Id$
  */
 
+
 $(function() {
 	// 轮播
 	var interval;
