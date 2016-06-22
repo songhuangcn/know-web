@@ -12,17 +12,22 @@
 	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
+	<script type="text/javascript" src="/script/application.js"></script>
 </head>
 <body>
 	<%= render '/shared/backTop' %>
 	<%= render '/shared/nav' %>
 	<%= render '/shared/flash' %>
+
 	<%= yield %>
+
 	<%= render '/shared/link' %>
 	<%= render '/shared/copyright' %>
 	<%= render '/shared/debug' %>
-	
-	<%= javascript_include_tag 'base', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag params[:controller], 'data-turbolinks-track' => true %>
+
+	<script type="text/javascript">
+		// 返回顶部
+		toTop(200);
+	</script>
 </body>
 </html>
