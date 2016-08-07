@@ -14,5 +14,5 @@
 
 .DS_Store
 config/database.yml
-config/deploy.yml
+config/deploy.rb
 .byebug_history
